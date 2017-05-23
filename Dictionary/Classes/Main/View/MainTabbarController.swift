@@ -12,7 +12,6 @@ import ESTabBarController_swift
 final class MainTabbarController: ESTabBarController {
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -77,6 +76,7 @@ extension MainTabbarController {
         vc.tabBarItem = ESTabBarItem.init(TabbarItemBounceContentView(), title: title, image:normalImage, selectedImage: selectedImage)
         
         let nav:CustomNavigationController = CustomNavigationController(rootViewController: vc)
+        
         
         addChildViewController(nav)
     }
