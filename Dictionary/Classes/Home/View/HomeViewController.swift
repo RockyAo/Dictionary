@@ -10,26 +10,33 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    var viewModel: HomeViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        initializeCoordinator()
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func bindViewModel() {
+        
+        
+    }
+
+}
+
+extension HomeViewController{
+
+    fileprivate func initializeCoordinator(){
+    
+        let coordinator = SceneCoordinator(currentViewController: self)
+        
+        viewModel = HomeViewModel(coordinator: coordinator)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

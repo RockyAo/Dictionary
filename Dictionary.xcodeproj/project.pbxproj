@@ -28,6 +28,7 @@
 		5CE687A51ED433A700ABC9D9 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687A31ED433A700ABC9D9 /* UINavigationController+Rx.swift */; };
 		5CE687A71ED433E100ABC9D9 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687A61ED433E100ABC9D9 /* Scene+ViewController.swift */; };
 		5CE687AE1ED438C200ABC9D9 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687AD1ED438C200ABC9D9 /* BindableType.swift */; };
+		5CE687B01ED43C2B00ABC9D9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687AF1ED43C2B00ABC9D9 /* HomeViewModel.swift */; };
 		718081E9EF40182ADFBF9527 /* Pods_Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCABCE8B3A54106D05A2364 /* Pods_Dictionary.framework */; };
 		745F0F2E6FF2B352A6D8CF22 /* Pods_DictionaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D213E45C292EAAD846F5E5B7 /* Pods_DictionaryTests.framework */; };
 		78318FEABD529E4E923B3F94 /* Pods_DictionaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */; };
@@ -79,6 +80,7 @@
 		5CE687A31ED433A700ABC9D9 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		5CE687A61ED433E100ABC9D9 /* Scene+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
 		5CE687AD1ED438C200ABC9D9 /* BindableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		5CE687AF1ED43C2B00ABC9D9 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictionaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EB3506E26F434DB1D6C7AE /* Pods-DictionaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryTests/Pods-DictionaryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1D3868A49D9E55A9C992E9 /* Pods-DictionaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryUITests/Pods-DictionaryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		5CE6877A1ED42CCC00ABC9D9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5CE687AF1ED43C2B00ABC9D9 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE687B01ED43C2B00ABC9D9 /* HomeViewModel.swift in Sources */,
 				5CE687A41ED433A700ABC9D9 /* Scheduler+Rx.swift in Sources */,
 				5CE6879B1ED4308A00ABC9D9 /* SceneCoordinator.swift in Sources */,
 				5CE687891ED42E9B00ABC9D9 /* MainTabbarController.swift in Sources */,

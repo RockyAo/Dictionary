@@ -20,6 +20,13 @@ class SceneCoordinator: SceneCoordinatorType {
         currentViewController = window.rootViewController!
     }
     
+    convenience init(currentViewController:UIViewController) {
+        
+        self.init(window: UIApplication.shared.keyWindow!)
+        
+        self.currentViewController = currentViewController
+    }
+    
     static func actualViewController(for viewController: UIViewController) -> UIViewController {
         if let navigationController = viewController as? UINavigationController {
             return navigationController.viewControllers.first!
