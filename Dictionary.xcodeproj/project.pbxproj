@@ -29,6 +29,14 @@
 		5CE687A71ED433E100ABC9D9 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687A61ED433E100ABC9D9 /* Scene+ViewController.swift */; };
 		5CE687AE1ED438C200ABC9D9 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687AD1ED438C200ABC9D9 /* BindableType.swift */; };
 		5CE687B01ED43C2B00ABC9D9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687AF1ED43C2B00ABC9D9 /* HomeViewModel.swift */; };
+		5CE687B71ED6BB4A00ABC9D9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687B31ED6BB4A00ABC9D9 /* UIColor+Extension.swift */; };
+		5CE687B81ED6BB4A00ABC9D9 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687B41ED6BB4A00ABC9D9 /* UIImage+Extension.swift */; };
+		5CE687B91ED6BB4A00ABC9D9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687B51ED6BB4A00ABC9D9 /* UIViewController+Extension.swift */; };
+		5CE687BB1ED6E1D300ABC9D9 /* NetworkMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687BA1ED6E1D300ABC9D9 /* NetworkMarco.swift */; };
+		5CE687C71ED6E4D100ABC9D9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE687C61ED6E4D100ABC9D9 /* libz.tbd */; };
+		5CE687C91ED6E4DD00ABC9D9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE687C81ED6E4DD00ABC9D9 /* libsqlite3.tbd */; };
+		5CE687D01ED6EDB600ABC9D9 /* DictionaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687CF1ED6EDB600ABC9D9 /* DictionaryAPI.swift */; };
+		67A6DF7CDB62E11A747E39DF /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */; };
 		718081E9EF40182ADFBF9527 /* Pods_Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCABCE8B3A54106D05A2364 /* Pods_Dictionary.framework */; };
 		745F0F2E6FF2B352A6D8CF22 /* Pods_DictionaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D213E45C292EAAD846F5E5B7 /* Pods_DictionaryTests.framework */; };
 		78318FEABD529E4E923B3F94 /* Pods_DictionaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */; };
@@ -81,6 +89,15 @@
 		5CE687A61ED433E100ABC9D9 /* Scene+ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
 		5CE687AD1ED438C200ABC9D9 /* BindableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		5CE687AF1ED43C2B00ABC9D9 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5CE687B31ED6BB4A00ABC9D9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5CE687B41ED6BB4A00ABC9D9 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		5CE687B51ED6BB4A00ABC9D9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		5CE687BA1ED6E1D300ABC9D9 /* NetworkMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMarco.swift; sourceTree = "<group>"; };
+		5CE687C21ED6E45C00ABC9D9 /* Dictionary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dictionary-Bridging-Header.h"; sourceTree = "<group>"; };
+		5CE687C61ED6E4D100ABC9D9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5CE687C81ED6E4DD00ABC9D9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5CE687CF1ED6EDB600ABC9D9 /* DictionaryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAPI.swift; sourceTree = "<group>"; };
+		67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
 		7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictionaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EB3506E26F434DB1D6C7AE /* Pods-DictionaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryTests/Pods-DictionaryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1D3868A49D9E55A9C992E9 /* Pods-DictionaryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryUITests/Pods-DictionaryUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE687C91ED6E4DD00ABC9D9 /* libsqlite3.tbd in Frameworks */,
+				5CE687C71ED6E4D100ABC9D9 /* libz.tbd in Frameworks */,
 				718081E9EF40182ADFBF9527 /* Pods_Dictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +140,8 @@
 		110F16A1D21B4906E3381E81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CE687C81ED6E4DD00ABC9D9 /* libsqlite3.tbd */,
+				5CE687C61ED6E4D100ABC9D9 /* libz.tbd */,
 				CBCABCE8B3A54106D05A2364 /* Pods_Dictionary.framework */,
 				D213E45C292EAAD846F5E5B7 /* Pods_DictionaryTests.framework */,
 				7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */,
@@ -154,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE687441ED4298300ABC9D9 /* AppDelegate.swift */,
+				5CE687B11ED6AE4F00ABC9D9 /* Services */,
 				5CE687AC1ED4381F00ABC9D9 /* Protocol */,
 				5CE6878B1ED42F1600ABC9D9 /* Base */,
 				5CE687721ED42CCC00ABC9D9 /* Classes */,
@@ -162,6 +184,7 @@
 				5CE687811ED42CCC00ABC9D9 /* Resources */,
 				5CE687841ED42CCC00ABC9D9 /* SceneCoordinator */,
 				5CE6874D1ED4298300ABC9D9 /* LaunchScreen.storyboard */,
+				5CE687C21ED6E45C00ABC9D9 /* Dictionary-Bridging-Header.h */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -296,6 +319,9 @@
 		5CE6877F1ED42CCC00ABC9D9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5CE687B31ED6BB4A00ABC9D9 /* UIColor+Extension.swift */,
+				5CE687B41ED6BB4A00ABC9D9 /* UIImage+Extension.swift */,
+				5CE687B51ED6BB4A00ABC9D9 /* UIViewController+Extension.swift */,
 				5CE687A21ED433A700ABC9D9 /* Scheduler+Rx.swift */,
 				5CE687A31ED433A700ABC9D9 /* UINavigationController+Rx.swift */,
 			);
@@ -305,6 +331,8 @@
 		5CE687801ED42CCC00ABC9D9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5CE687BA1ED6E1D300ABC9D9 /* NetworkMarco.swift */,
+				5CE687CF1ED6EDB600ABC9D9 /* DictionaryAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -377,6 +405,14 @@
 				5CE687AD1ED438C200ABC9D9 /* BindableType.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5CE687B11ED6AE4F00ABC9D9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A300BD5C7E216873D3DBBA89 /* Pods */ = {
@@ -470,6 +506,7 @@
 					5CE687401ED4298300ABC9D9 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = NQ84VMKY7C;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					5CE687541ED4298300ABC9D9 = {
@@ -685,14 +722,20 @@
 				5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */,
 				5CE687991ED4303600ABC9D9 /* CustomNavigationController.swift in Sources */,
 				5CE6878A1ED42E9B00ABC9D9 /* TabbarItemBounceContentView.swift in Sources */,
+				5CE687D01ED6EDB600ABC9D9 /* DictionaryAPI.swift in Sources */,
+				5CE687BB1ED6E1D300ABC9D9 /* NetworkMarco.swift in Sources */,
 				5CE6879D1ED430B200ABC9D9 /* SceneCoordinatorType.swift in Sources */,
 				5CE687AE1ED438C200ABC9D9 /* BindableType.swift in Sources */,
+				5CE687B91ED6BB4A00ABC9D9 /* UIViewController+Extension.swift in Sources */,
 				5CE687971ED42F8600ABC9D9 /* SettingViewController.swift in Sources */,
 				5CE687911ED42F6100ABC9D9 /* HomeViewController.swift in Sources */,
 				5CE687A51ED433A700ABC9D9 /* UINavigationController+Rx.swift in Sources */,
+				5CE687B81ED6BB4A00ABC9D9 /* UIImage+Extension.swift in Sources */,
 				5CE687A71ED433E100ABC9D9 /* Scene+ViewController.swift in Sources */,
 				5CE6879F1ED430CB00ABC9D9 /* Scene.swift in Sources */,
 				5CE687A11ED430FB00ABC9D9 /* SceneTransitionType.swift in Sources */,
+				67A6DF7CDB62E11A747E39DF /* HomeServices.swift in Sources */,
+				5CE687B71ED6BB4A00ABC9D9 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,12 +880,59 @@
 			baseConfigurationReference = C989662B6DF604ACD8309D04 /* Pods-Dictionary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NQ84VMKY7C;
 				INFOPLIST_FILE = Dictionary/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dictionary/Network/ai-cloud-sdk-iOS",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Action\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"ESTabBarController_swift\"",
+					"-framework",
+					"\"HandyJSON\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"NSObject_Rx\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxDataSources\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"Then\"",
+					"-framework",
+					"\"YYText\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zcbl.Dictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dictionary/Dictionary-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -852,12 +942,58 @@
 			baseConfigurationReference = 501E71E0FD7742D3D36E99E1 /* Pods-Dictionary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NQ84VMKY7C;
 				INFOPLIST_FILE = Dictionary/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dictionary/Network/ai-cloud-sdk-iOS",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Action\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"ESTabBarController_swift\"",
+					"-framework",
+					"\"HandyJSON\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"NSObject_Rx\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxDataSources\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"Then\"",
+					"-framework",
+					"\"YYText\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zcbl.Dictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dictionary/Dictionary-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

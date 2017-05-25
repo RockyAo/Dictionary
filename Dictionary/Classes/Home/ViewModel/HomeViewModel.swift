@@ -7,14 +7,16 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 struct HomeViewModel {
     
     let coordinator : SceneCoordinatorType!
     
-    init(coordinator:SceneCoordinatorType) {
+    init(coordinator:SceneCoordinatorType,service:HomeServices) {
         
         self.coordinator = coordinator
     }
-    
+
 }

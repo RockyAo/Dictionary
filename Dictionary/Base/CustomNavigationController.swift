@@ -14,12 +14,25 @@ class CustomNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+//        navigationBar.backgroundColor = UIColor.white
+        
+        navigationBar.tintColor = UIColor.white
+        
+        navigationBar.isTranslucent = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
