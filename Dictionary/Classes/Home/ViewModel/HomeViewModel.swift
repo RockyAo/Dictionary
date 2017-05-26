@@ -23,7 +23,7 @@ struct HomeViewModel {
     
     
     ///output
-    var translateData:Observable<WordModel>
+    var translateData:Driver<WordModel>
 
     
     init(coordinator:SceneCoordinatorType,service:HomeServices) {
@@ -32,13 +32,13 @@ struct HomeViewModel {
         
         self.service = service
         
-        translateData = searchText.asObservable()
+        translateData = searchText.asDriver()
             .skip(1)
-            .filter{ $0.characters.count != 0 }
             .flatMapLatest{
 
-                return service.requestData(string: $0)
+                return service.requestData(string: $0).asDriver(onErrorJustReturn: WordModel())
             }
+        
         
     }
     

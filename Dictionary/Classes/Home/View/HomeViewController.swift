@@ -25,6 +25,13 @@ class HomeViewController: BaseViewController {
     
         return sb
     }()
+    
+    lazy var wordView: WordView = {
+        let wv = WordView()
+        wv.sizeToFit()
+        return wv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,10 +56,7 @@ class HomeViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         
         viewModel.translateData
-            .subscribe{
-        
-                print($0)
-            }
+            .drive(wordView.rx.configureData)
             .addDisposableTo(disposeBag)
     }
 
@@ -80,6 +84,14 @@ extension HomeViewController{
             make.left.equalTo(10);
             make.height.equalTo(44);
             make.right.equalTo(-10);
+        }
+        
+        view.addSubview(wordView)
+        
+        wordView.snp.makeConstraints { (make) in
+            
+            make.left.right.equalTo(0)
+            make.top.equalTo(0)
         }
     }
 }

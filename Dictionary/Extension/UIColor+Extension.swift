@@ -43,9 +43,9 @@ extension UIColor{
             
             static let dark:UIColor = UIColor.colorWithRGBA(red: 25, green: 25, blue: 25)
             
-            static let middle:UIColor = UIColor.colorWithRGBA(red: 153, green: 153, blue: 153)
+            static let weak:UIColor = UIColor.colorWithRGBA(red: 153, green: 153, blue: 153)
             
-            static let weak:UIColor = UIColor.colorWithRGBA(red: 102, green: 102, blue: 102)
+            static let middle:UIColor = UIColor.colorWithRGBA(red: 102, green: 102, blue: 102)
         }
         
         static let backgroundGray:UIColor = UIColor.colorWithHexString("f8f8f8")
