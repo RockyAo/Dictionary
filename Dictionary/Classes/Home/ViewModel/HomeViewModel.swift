@@ -34,7 +34,7 @@ struct HomeViewModel {
         
         translateData = searchText.asDriver()
             .skip(1)
-            .flatMapLatest{
+            .flatMap{
 
                 return service.requestData(string: $0).asDriver(onErrorJustReturn: WordModel())
             }

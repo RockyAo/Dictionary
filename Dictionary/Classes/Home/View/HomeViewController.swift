@@ -29,6 +29,7 @@ class HomeViewController: BaseViewController {
     lazy var wordView: WordView = {
         let wv = WordView()
         wv.sizeToFit()
+        wv.isHidden = true
         return wv
     }()
     
@@ -53,6 +54,13 @@ class HomeViewController: BaseViewController {
         
         searchBar.rx.text.orEmpty
             .bind(to: viewModel.searchText)
+            .addDisposableTo(disposeBag)
+        
+        searchBar.rx.text.orEmpty.asDriver()
+            .map {
+                return $0.characters.count <= 0
+            }
+            .drive(wordView.rx.isHidden)
             .addDisposableTo(disposeBag)
         
         viewModel.translateData

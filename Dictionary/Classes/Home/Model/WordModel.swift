@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct WordModel:Mappable {
     
-    var query:String?
+    var query:String? 
     
     var speakUrl:String?
     
