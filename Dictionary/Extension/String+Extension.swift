@@ -47,4 +47,18 @@ extension String{
     func removeFirstCharacter() -> String {
         return self.substring(from: self.index(after: self.startIndex))
     }
+    
+}
+
+
+// MARK: - static method
+extension String{
+
+    static func timeSince1970String() -> String {
+        
+        let date = NSDate.timeIntervalSinceReferenceDate
+        
+        return "\(date)"
+    }
+
 }
