@@ -33,6 +33,8 @@ class HomeViewController: BaseViewController {
         
         setupSubviews()
         
+        bindViewModel()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -42,7 +44,16 @@ class HomeViewController: BaseViewController {
     
     func bindViewModel() {
         
+        searchBar.rx.text.orEmpty
+            .bind(to: viewModel.searchText)
+            .addDisposableTo(disposeBag)
         
+        viewModel.translateData
+            .subscribe{
+        
+                print($0)
+            }
+            .addDisposableTo(disposeBag)
     }
 
 }

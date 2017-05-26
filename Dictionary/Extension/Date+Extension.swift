@@ -9,6 +9,14 @@
 import Foundation
 
 extension Date{
+    
+    var timeSince1970String:String {
+    
+        let date = NSDate.timeIntervalSinceReferenceDate
+        
+        return "\(date)"
+    }
+    
 
     static func convertFromString(_ dateStr: String, formatStr: String = "YYYY-MM-dd HH:mm:ss zzz") -> Date? {
         let format = DateFormatter()

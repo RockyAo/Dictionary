@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+
+
 let dictionaryAPI = RxMoyaProvider<DictService>()
 
 enum DictService {
@@ -35,7 +37,8 @@ extension DictService: TargetType {
     var parameters: [String: Any]? {
         switch self {
         case .query(let target):
-            return ["":""]
+            //多请求应抽出公共参数
+            return ["q":target,"from":"atuo","to":"auto","appKey":NetworkMarco.key,"salt":"0110","sign":"\(NetworkMarco.key)\(target)0110\(NetworkMarco.secrect)".md5]
         }
     }
     public var parameterEncoding: ParameterEncoding {

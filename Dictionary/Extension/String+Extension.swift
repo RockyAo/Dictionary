@@ -10,23 +10,22 @@ import Foundation
 
 extension String{
 
-    var MD5: String {
-        let cString = self.cString(using: String.Encoding.utf8)
-        let length = CUnsignedInt(
-            self.lengthOfBytes(using: String.Encoding.utf8)
-        )
-        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(
-            capacity: Int(CC_MD5_DIGEST_LENGTH)
-        )
+    var md5: String {
+        let str = cString(using: .utf8)
+        let strLen = CC_LONG(lengthOfBytes(using: .utf8))
+        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
+        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
         
-        CC_MD5(cString!, length, result)
+        CC_MD5(str!, strLen, result)
         
-        return String(format:
-            "%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-                      result[0], result[1], result[2], result[3],
-                      result[4], result[5], result[6], result[7],
-                      result[8], result[9], result[10], result[11],
-                      result[12], result[13], result[14], result[15])
+        var hash = ""
+        for i in 0..<digestLen {
+            hash = hash.appendingFormat("%02x", result[i])
+        }
+        
+        result.deallocate(capacity: digestLen)
+        
+        return hash
     }
     
     var hasEmoji: Bool {
@@ -48,17 +47,4 @@ extension String{
         return self.substring(from: self.index(after: self.startIndex))
     }
     
-}
-
-
-// MARK: - static method
-extension String{
-
-    static func timeSince1970String() -> String {
-        
-        let date = NSDate.timeIntervalSinceReferenceDate
-        
-        return "\(date)"
-    }
-
 }

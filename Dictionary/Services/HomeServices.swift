@@ -4,8 +4,16 @@
 //
 
 import Foundation
+import RxSwift
 
 class HomeServices{
 
-
+    func requestData(string:String) -> Observable<WordModel> {
+        
+        return dictionaryAPI.request(.query(target: string))
+            .asObservable()
+            .mapJSON()
+            .mapToObjectWithNoError(modelTypeL: WordModel.self)
+        
+    }
 }
