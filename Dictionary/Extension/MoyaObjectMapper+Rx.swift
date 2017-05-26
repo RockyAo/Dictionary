@@ -27,6 +27,8 @@ extension Observable{
                 throw DictionaryError.mapJsonError
             }
             
+            
+            
             if (errorCode == "0") {
                 
                 return Mapper<T>().map(JSON: dict)!
@@ -46,6 +48,8 @@ extension Observable{
             guard let dict = response as? [String: Any] else {
                 throw DictionaryError.mapJsonError
             }
+            
+//            print(dict)
             
             return Mapper<T>().map(JSON: dict)!
             

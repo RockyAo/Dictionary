@@ -35,7 +35,7 @@ struct HomeViewModel {
         translateData = searchText.asObservable()
             .skip(1)
             .filter{ $0.characters.count != 0 }
-            .flatMap{
+            .flatMapLatest{
 
                 return service.requestData(string: $0)
             }

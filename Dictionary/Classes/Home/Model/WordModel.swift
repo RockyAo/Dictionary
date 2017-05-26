@@ -15,6 +15,9 @@ struct WordModel:Mappable {
     
     var speakUrl:String?
     
+    var basicTranslation:BasicTranslation?
+    
+    var translation:Array<String>?
     
     /// This function can be used to validate JSON prior to mapping. Return nil to cancel mapping at this point
     init?(map: Map) {
@@ -27,7 +30,9 @@ struct WordModel:Mappable {
 
     mutating func mapping(map: Map) {
         query 	<- map["query"]
-        speakUrl 	<- map["speakUrl"]
+        speakUrl 	<- map["tSpeakUrl"]
+        basicTranslation <- map["basic"]
+        translation <- map["translation"]
     }
     
 }
