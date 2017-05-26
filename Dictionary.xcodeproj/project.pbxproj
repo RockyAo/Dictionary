@@ -36,6 +36,8 @@
 		5CE687C71ED6E4D100ABC9D9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE687C61ED6E4D100ABC9D9 /* libz.tbd */; };
 		5CE687C91ED6E4DD00ABC9D9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE687C81ED6E4DD00ABC9D9 /* libsqlite3.tbd */; };
 		5CE687D01ED6EDB600ABC9D9 /* DictionaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687CF1ED6EDB600ABC9D9 /* DictionaryAPI.swift */; };
+		5CE687D21ED7DE7700ABC9D9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687D11ED7DE7700ABC9D9 /* String+Extension.swift */; };
+		5CE687D41ED7DF2400ABC9D9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687D31ED7DF2400ABC9D9 /* Date+Extension.swift */; };
 		67A6DF7CDB62E11A747E39DF /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */; };
 		718081E9EF40182ADFBF9527 /* Pods_Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCABCE8B3A54106D05A2364 /* Pods_Dictionary.framework */; };
 		745F0F2E6FF2B352A6D8CF22 /* Pods_DictionaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D213E45C292EAAD846F5E5B7 /* Pods_DictionaryTests.framework */; };
@@ -97,6 +99,8 @@
 		5CE687C61ED6E4D100ABC9D9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5CE687C81ED6E4DD00ABC9D9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5CE687CF1ED6EDB600ABC9D9 /* DictionaryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAPI.swift; sourceTree = "<group>"; };
+		5CE687D11ED7DE7700ABC9D9 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5CE687D31ED7DF2400ABC9D9 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
 		7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DictionaryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EB3506E26F434DB1D6C7AE /* Pods-DictionaryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryTests/Pods-DictionaryTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				5CE687B51ED6BB4A00ABC9D9 /* UIViewController+Extension.swift */,
 				5CE687A21ED433A700ABC9D9 /* Scheduler+Rx.swift */,
 				5CE687A31ED433A700ABC9D9 /* UINavigationController+Rx.swift */,
+				5CE687D11ED7DE7700ABC9D9 /* String+Extension.swift */,
+				5CE687D31ED7DF2400ABC9D9 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -713,6 +719,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE687D41ED7DF2400ABC9D9 /* Date+Extension.swift in Sources */,
 				5CE687B01ED43C2B00ABC9D9 /* HomeViewModel.swift in Sources */,
 				5CE687A41ED433A700ABC9D9 /* Scheduler+Rx.swift in Sources */,
 				5CE6879B1ED4308A00ABC9D9 /* SceneCoordinator.swift in Sources */,
@@ -729,6 +736,7 @@
 				5CE687B91ED6BB4A00ABC9D9 /* UIViewController+Extension.swift in Sources */,
 				5CE687971ED42F8600ABC9D9 /* SettingViewController.swift in Sources */,
 				5CE687911ED42F6100ABC9D9 /* HomeViewController.swift in Sources */,
+				5CE687D21ED7DE7700ABC9D9 /* String+Extension.swift in Sources */,
 				5CE687A51ED433A700ABC9D9 /* UINavigationController+Rx.swift in Sources */,
 				5CE687B81ED6BB4A00ABC9D9 /* UIImage+Extension.swift in Sources */,
 				5CE687A71ED433E100ABC9D9 /* Scene+ViewController.swift in Sources */,
