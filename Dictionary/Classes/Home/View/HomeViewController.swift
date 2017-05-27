@@ -35,6 +35,8 @@ class HomeViewController: BaseViewController {
         return wv
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -111,5 +113,13 @@ extension HomeViewController{
             make.left.right.equalTo(0)
             make.top.equalTo(0)
         }
+        
+        let tapBackground = UITapGestureRecognizer()
+        tapBackground.rx.event
+            .subscribe(onNext: { [weak self] _ in
+                self?.searchBar.resignFirstResponder()
+            })
+            .disposed(by: disposeBag)
+        view.addGestureRecognizer(tapBackground)
     }
 }
