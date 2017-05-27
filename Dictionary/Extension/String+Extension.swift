@@ -39,6 +39,17 @@ extension String{
         return false
     }
     
+    var hasChinese:Bool{
+        
+        for (_, value) in self.characters.enumerated() {
+            if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func removeSpaceChars() -> String {
         return self.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: "\r", with: "").replacingOccurrences(of: " ", with: "")
     }

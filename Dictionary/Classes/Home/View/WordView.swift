@@ -36,14 +36,14 @@ class WordView: UIView {
         return tl
     }()
     
-    fileprivate lazy var playButton: UIButton = {
+    lazy var playButton: UIButton = {
         let pb = UIButton(type: .custom)
         pb.setBackgroundImage(#imageLiteral(resourceName: "home_play_button"), for: .normal)
         
         return pb
     }()
     
-    fileprivate lazy var collectionButton: UIButton = {
+    lazy var collectionButton: UIButton = {
         let cb = UIButton(type: .custom)
         cb.setBackgroundImage(#imageLiteral(resourceName: "collect"), for: .normal)
         cb.setBackgroundImage(#imageLiteral(resourceName: "select_collect"), for: .selected)
@@ -76,6 +76,10 @@ class WordView: UIView {
         dl.numberOfLines = 0
         return dl
     }()
+    
+    
+    var data:WordModel?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -163,6 +167,8 @@ extension Reactive where Base:WordView{
     var configureData:UIBindingObserver<Base,WordModel>{
     
         return UIBindingObserver(UIElement: base, binding: { (wordView, data) in
+            
+            wordView.data = data
             
             wordView.titleLabel.text = data.query
             

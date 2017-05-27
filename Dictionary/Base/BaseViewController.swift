@@ -14,11 +14,19 @@ import RxSwift
 class BaseViewController: UIViewController {
     
     let disposeBag = DisposeBag()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    
     }
 
     override func didReceiveMemoryWarning() {

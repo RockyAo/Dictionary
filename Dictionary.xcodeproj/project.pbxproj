@@ -12,6 +12,8 @@
 		5C0902DB1ED8212B0099F80E /* BasicTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DA1ED8212B0099F80E /* BasicTranslation.swift */; };
 		5C0902DD1ED82C5B0099F80E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DC1ED82C5B0099F80E /* UIView+Extension.swift */; };
 		5C0902DF1ED82D6C0099F80E /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */; };
+		5C0902E11ED91CC70099F80E /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902E01ED91CC70099F80E /* SVProgressHUD+Extension.swift */; };
+		5C0902E31ED94E230099F80E /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902E21ED94E230099F80E /* Reactive+Extension.swift */; };
 		5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687441ED4298300ABC9D9 /* AppDelegate.swift */; };
 		5CE6874F1ED4298300ABC9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE6874D1ED4298300ABC9D9 /* LaunchScreen.storyboard */; };
 		5CE6875A1ED4298300ABC9D9 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687591ED4298300ABC9D9 /* DictionaryTests.swift */; };
@@ -77,6 +79,8 @@
 		5C0902DA1ED8212B0099F80E /* BasicTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTranslation.swift; sourceTree = "<group>"; };
 		5C0902DC1ED82C5B0099F80E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
+		5C0902E01ED91CC70099F80E /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
+		5C0902E21ED94E230099F80E /* Reactive+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
 		5CE687411ED4298300ABC9D9 /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE687441ED4298300ABC9D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CE6874E1ED4298300ABC9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -353,6 +357,8 @@
 				5C0902D61ED81DF30099F80E /* Font+Extension.swift */,
 				5C0902DC1ED82C5B0099F80E /* UIView+Extension.swift */,
 				5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */,
+				5C0902E01ED91CC70099F80E /* SVProgressHUD+Extension.swift */,
+				5C0902E21ED94E230099F80E /* Reactive+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -744,12 +750,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE687D41ED7DF2400ABC9D9 /* Date+Extension.swift in Sources */,
+				5C0902E11ED91CC70099F80E /* SVProgressHUD+Extension.swift in Sources */,
 				5C0902DB1ED8212B0099F80E /* BasicTranslation.swift in Sources */,
 				5CE687B01ED43C2B00ABC9D9 /* HomeViewModel.swift in Sources */,
 				5CE687A41ED433A700ABC9D9 /* Scheduler+Rx.swift in Sources */,
 				5CE6879B1ED4308A00ABC9D9 /* SceneCoordinator.swift in Sources */,
 				5CE687891ED42E9B00ABC9D9 /* MainTabbarController.swift in Sources */,
 				5CE6878D1ED42F3700ABC9D9 /* BaseViewController.swift in Sources */,
+				5C0902E31ED94E230099F80E /* Reactive+Extension.swift in Sources */,
 				5CE6878F1ED42F4C00ABC9D9 /* BookViewController.swift in Sources */,
 				5CE687D81ED7F97600ABC9D9 /* MoyaObjectMapper+Rx.swift in Sources */,
 				5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */,

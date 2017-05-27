@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Action
+import SVProgressHUD
 
 class HomeViewController: BaseViewController {
 
@@ -66,6 +68,14 @@ class HomeViewController: BaseViewController {
         viewModel.translateData
             .drive(wordView.rx.configureData)
             .addDisposableTo(disposeBag)
+        
+
+        
+        wordView.playButton.rx.bind(to: viewModel.playAudioAction) { _  in
+            
+            return self.wordView.data?.finalUrl ?? ""
+        }
+        
     }
 
 }

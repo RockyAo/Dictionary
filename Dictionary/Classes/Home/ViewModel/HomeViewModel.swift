@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Action
 
 struct HomeViewModel {
     
@@ -21,6 +22,7 @@ struct HomeViewModel {
     /// input:
     let searchText:Variable<String> = Variable("")
     
+    let playAudioAction:Action<String,Void>
     
     ///output
     var translateData:Driver<WordModel>
@@ -39,7 +41,14 @@ struct HomeViewModel {
                 return service.requestData(string: $0).asDriver(onErrorJustReturn: WordModel())
             }
         
+        playAudioAction = Action{ input in
         
+            print(input)
+            
+            return service.playAudio(urlString: input)
+        }
     }
+    
+    
     
 }
