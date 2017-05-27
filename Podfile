@@ -8,7 +8,6 @@ target 'Dictionary' do
   # Pods for Dictionary
   # NetWork
    pod 'Alamofire'
-   pod 'HandyJSON'
    pod 'Moya'
    pod 'Moya/RxSwift'
    pod 'ObjectMapper', '~> 2.2'
@@ -32,7 +31,8 @@ target 'Dictionary' do
    pod 'Action'
    pod 'NSObject+Rx'
    pod 'RxDataSources'
-
+   pod 'RxPermission'
+   
   target 'DictionaryTests' do
     inherit! :search_paths
     # Pods for testing

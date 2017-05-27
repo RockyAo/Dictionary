@@ -12,7 +12,8 @@ import RxCocoa
 
 class WordView: UIView {
     
-    
+    let disposeBag = DisposeBag()
+
     fileprivate lazy var centerSeperateView:UIView = {
     
         return UIView.getSeperateView()
@@ -154,6 +155,12 @@ class WordView: UIView {
             make.top.equalTo(descriptionLabel.snp.bottom).offset(25)
             make.height.equalTo(0.5)
         }
+        
+        collectionButton.rx.tap
+            .asDriver()
+            .map{ !self.collectionButton.isSelected }
+            .drive(collectionButton.rx.isSelected)
+            .addDisposableTo(disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -191,7 +198,12 @@ extension Reactive where Base:WordView{
                 desString.append("\n")
             }
             
-            wordView.descriptionLabel.text = desString
+            let attrString = NSMutableAttributedString(string: desString)
+            
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 20
+            attrString.addAttributes([NSParagraphStyleAttributeName:style], range: NSRange(location: 0, length: desString.characters.count))
+            wordView.descriptionLabel.attributedText = attrString
         })
     }
     

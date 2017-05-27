@@ -18,7 +18,7 @@ class HomeViewController: BaseViewController {
     lazy var searchBar: UISearchBar = {
         
         let sb = UISearchBar()
-        sb.placeholder = "请输入要翻译的文本"
+        sb.placeholder = "input word what you want to search"
         sb.tintColor = UIColor.black
         sb.barTintColor = UIColor.Main.backgroundGray
         sb.searchBarStyle = .minimal
