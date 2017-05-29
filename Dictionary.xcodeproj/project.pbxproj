@@ -14,6 +14,8 @@
 		5C0902DF1ED82D6C0099F80E /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */; };
 		5C0902E11ED91CC70099F80E /* SVProgressHUD+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902E01ED91CC70099F80E /* SVProgressHUD+Extension.swift */; };
 		5C0902E31ED94E230099F80E /* Reactive+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902E21ED94E230099F80E /* Reactive+Extension.swift */; };
+		5C0902E61EDBC4AA0099F80E /* DatabaseServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902E51EDBC4AA0099F80E /* DatabaseServiceType.swift */; };
+		5C0902E81EDBD01A0099F80E /* WordDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902E71EDBD01A0099F80E /* WordDataModel.swift */; };
 		5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687441ED4298300ABC9D9 /* AppDelegate.swift */; };
 		5CE6874F1ED4298300ABC9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE6874D1ED4298300ABC9D9 /* LaunchScreen.storyboard */; };
 		5CE6875A1ED4298300ABC9D9 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687591ED4298300ABC9D9 /* DictionaryTests.swift */; };
@@ -81,6 +83,8 @@
 		5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		5C0902E01ED91CC70099F80E /* SVProgressHUD+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SVProgressHUD+Extension.swift"; sourceTree = "<group>"; };
 		5C0902E21ED94E230099F80E /* Reactive+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reactive+Extension.swift"; sourceTree = "<group>"; };
+		5C0902E51EDBC4AA0099F80E /* DatabaseServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseServiceType.swift; sourceTree = "<group>"; };
+		5C0902E71EDBD01A0099F80E /* WordDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDataModel.swift; sourceTree = "<group>"; };
 		5CE687411ED4298300ABC9D9 /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE687441ED4298300ABC9D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CE6874E1ED4298300ABC9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5C0902E41EDBC3D20099F80E /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				5C0902E51EDBC4AA0099F80E /* DatabaseServiceType.swift */,
+				5C0902E71EDBD01A0099F80E /* WordDataModel.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		5CE687381ED4298300ABC9D9 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE687441ED4298300ABC9D9 /* AppDelegate.swift */,
+				5C0902E41EDBC3D20099F80E /* DB */,
 				5CE687B11ED6AE4F00ABC9D9 /* Services */,
 				5CE687AC1ED4381F00ABC9D9 /* Protocol */,
 				5CE6878B1ED42F1600ABC9D9 /* Base */,
@@ -749,6 +763,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0902E61EDBC4AA0099F80E /* DatabaseServiceType.swift in Sources */,
 				5CE687D41ED7DF2400ABC9D9 /* Date+Extension.swift in Sources */,
 				5C0902E11ED91CC70099F80E /* SVProgressHUD+Extension.swift in Sources */,
 				5C0902DB1ED8212B0099F80E /* BasicTranslation.swift in Sources */,
@@ -761,6 +776,7 @@
 				5CE6878F1ED42F4C00ABC9D9 /* BookViewController.swift in Sources */,
 				5CE687D81ED7F97600ABC9D9 /* MoyaObjectMapper+Rx.swift in Sources */,
 				5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */,
+				5C0902E81EDBD01A0099F80E /* WordDataModel.swift in Sources */,
 				5CE687991ED4303600ABC9D9 /* CustomNavigationController.swift in Sources */,
 				5CE6878A1ED42E9B00ABC9D9 /* TabbarItemBounceContentView.swift in Sources */,
 				5CE687D01ED6EDB600ABC9D9 /* DictionaryAPI.swift in Sources */,

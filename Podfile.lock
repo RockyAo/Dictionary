@@ -45,6 +45,11 @@ PODS:
     - Permission/Core
   - Permission/SpeechRecognizer (2.0.4):
     - Permission/Core
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
   - Result (3.2.2)
   - RxCocoa (3.4.1):
     - RxSwift (~> 3.4)
@@ -108,6 +113,9 @@ PODS:
   - RxPermission/SpeechRecognizer (1.0.0):
     - Permission/SpeechRecognizer
     - RxPermission/Core
+  - RxRealm (0.6.0):
+    - RealmSwift (~> 2.5)
+    - RxSwift (~> 3.2)
   - RxSwift (3.4.1)
   - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
@@ -125,9 +133,11 @@ DEPENDENCIES:
   - Moya/RxSwift
   - NSObject+Rx
   - ObjectMapper (~> 2.2)
+  - RealmSwift
   - RxCocoa
   - RxDataSources
   - RxPermission
+  - RxRealm
   - RxSwift
   - SnapKit
   - SVProgressHUD
@@ -145,16 +155,19 @@ SPEC CHECKSUMS:
   NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
   ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
   Result: 4edd39003fdccf281d418ee1b006571f70123250
   RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
   RxDataSources: a021a0e944ba5f7991259829d973afdbfa719c0b
   RxPermission: acca72f2f9b75cfb5c90e34030ab774f4088bccb
+  RxRealm: 323de579b50b5e0f4a3e087d5925021f976ffaf1
   RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   Then: 8496793c8fcac95482b943909b440724c7d8d82c
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9ba1bc4c53bb93e272818437ab3cc78b446d8a6f
+PODFILE CHECKSUM: bb63168a0c33cc443153dad72fa0044a0360c086
 
 COCOAPODS: 1.2.0

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
 
 target 'Dictionary' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -32,6 +32,8 @@ target 'Dictionary' do
    pod 'NSObject+Rx'
    pod 'RxDataSources'
    pod 'RxPermission'
+   pod 'RealmSwift'
+   pod 'RxRealm'
    
   target 'DictionaryTests' do
     inherit! :search_paths
