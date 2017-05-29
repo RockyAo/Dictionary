@@ -26,7 +26,7 @@ protocol DatabaseServiceType {
     func delete(task:WordDataModel) -> Observable<Void>
     
     @discardableResult
-    func update(task:WordDataModel) -> Observable<WordDataModel>
+    func update(task:WordDataModel,collection:Bool) -> Observable<WordDataModel>
     
     @discardableResult
     func collection(task:WordDataModel) -> Observable<WordDataModel>

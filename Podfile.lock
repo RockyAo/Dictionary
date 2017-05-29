@@ -7,17 +7,17 @@ PODS:
   - IQKeyboardManagerSwift (4.0.9)
   - Kingfisher (3.9.1)
   - MJRefresh (3.1.12)
-  - Moya (8.0.4):
-    - Moya/Core (= 8.0.4)
-  - Moya/Core (8.0.4):
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
+  - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.4):
+  - Moya/RxSwift (8.0.5):
     - Moya/Core
     - RxSwift (~> 3.0)
   - NSObject+Rx (2.3.0):
     - RxSwift (~> 3.0)
-  - ObjectMapper (2.2.6)
+  - ObjectMapper (2.2.7)
   - Permission/AddressBook (2.0.4):
     - Permission/Core
   - Permission/Bluetooth (2.0.4):
@@ -151,9 +151,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
   Kingfisher: 6729a0baaa458245bfb8cd5a1296c71c10d6eb6c
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  Moya: a08bc060c7a44eee27447b239ed33a189b641e2b
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
-  ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   Permission: 6853b9694e66a6c9197468c66d1935c3629cbf9c
   Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
   RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc

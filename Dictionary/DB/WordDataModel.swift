@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-
-class WordDataModel: NSObject {
+class WordDataModel: Object {
     
     
 }

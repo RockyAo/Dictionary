@@ -51,9 +51,9 @@
 		5CE687D81ED7F97600ABC9D9 /* MoyaObjectMapper+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687D71ED7F97600ABC9D9 /* MoyaObjectMapper+Rx.swift */; };
 		5CE687DA1ED7FB3000ABC9D9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687D91ED7FB3000ABC9D9 /* Enum.swift */; };
 		67A6DF7CDB62E11A747E39DF /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */; };
-		718081E9EF40182ADFBF9527 /* Pods_Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCABCE8B3A54106D05A2364 /* Pods_Dictionary.framework */; };
 		745F0F2E6FF2B352A6D8CF22 /* Pods_DictionaryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D213E45C292EAAD846F5E5B7 /* Pods_DictionaryTests.framework */; };
 		78318FEABD529E4E923B3F94 /* Pods_DictionaryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC25B4BA784AAFEF2C4AD6C /* Pods_DictionaryUITests.framework */; };
+		B9D69A1B43B6D2FD69EA4BAB /* Pods_Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCABCE8B3A54106D05A2364 /* Pods_Dictionary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +142,7 @@
 			files = (
 				5CE687C91ED6E4DD00ABC9D9 /* libsqlite3.tbd in Frameworks */,
 				5CE687C71ED6E4D100ABC9D9 /* libz.tbd in Frameworks */,
-				718081E9EF40182ADFBF9527 /* Pods_Dictionary.framework in Frameworks */,
+				B9D69A1B43B6D2FD69EA4BAB /* Pods_Dictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,12 +485,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CE687691ED4298300ABC9D9 /* Build configuration list for PBXNativeTarget "Dictionary" */;
 			buildPhases = (
-				9AF1ED2A7FDBB008C790A07D /* [CP] Check Pods Manifest.lock */,
+				2B737B3C09B298C6FBE4134E /* [CP] Check Pods Manifest.lock */,
 				5CE6873D1ED4298300ABC9D9 /* Sources */,
 				5CE6873E1ED4298300ABC9D9 /* Frameworks */,
 				5CE6873F1ED4298300ABC9D9 /* Resources */,
-				619493E9D506D957F4CA07B1 /* [CP] Embed Pods Frameworks */,
-				EAD7D06DEADD4A37D22135F3 /* [CP] Copy Pods Resources */,
+				2282BDFD19129C353BF59613 /* [CP] Embed Pods Frameworks */,
+				7E01441C2B88DCF6B3D95819 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -636,7 +636,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		619493E9D506D957F4CA07B1 /* [CP] Embed Pods Frameworks */ = {
+		2282BDFD19129C353BF59613 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -649,6 +649,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictionary/Pods-Dictionary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B737B3C09B298C6FBE4134E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E01441C2B88DCF6B3D95819 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictionary/Pods-Dictionary-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		86F6F9D6AB5340352BA9CF48 /* [CP] Embed Pods Frameworks */ = {
@@ -664,21 +694,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DictionaryUITests/Pods-DictionaryUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9AF1ED2A7FDBB008C790A07D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A2C041A6B257D7D55FEF8249 /* [CP] Embed Pods Frameworks */ = {
@@ -709,21 +724,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DictionaryUITests/Pods-DictionaryUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EAD7D06DEADD4A37D22135F3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dictionary/Pods-Dictionary-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F4DD7A435521CB5A22054E11 /* [CP] Copy Pods Resources */ = {
@@ -953,46 +953,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dictionary/Network/ai-cloud-sdk-iOS",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Action\"",
-					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"ESTabBarController_swift\"",
-					"-framework",
-					"\"HandyJSON\"",
-					"-framework",
-					"\"IQKeyboardManagerSwift\"",
-					"-framework",
-					"\"Kingfisher\"",
-					"-framework",
-					"\"MJRefresh\"",
-					"-framework",
-					"\"Moya\"",
-					"-framework",
-					"\"NSObject_Rx\"",
-					"-framework",
-					"\"ObjectMapper\"",
-					"-framework",
-					"\"Result\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxDataSources\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SVProgressHUD\"",
-					"-framework",
-					"\"SnapKit\"",
-					"-framework",
-					"\"Then\"",
-					"-framework",
-					"\"YYText\"",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zcbl.Dictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dictionary/Dictionary-Bridging-Header.h";
@@ -1015,46 +976,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Dictionary/Network/ai-cloud-sdk-iOS",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Action\"",
-					"-framework",
-					"\"Alamofire\"",
-					"-framework",
-					"\"ESTabBarController_swift\"",
-					"-framework",
-					"\"HandyJSON\"",
-					"-framework",
-					"\"IQKeyboardManagerSwift\"",
-					"-framework",
-					"\"Kingfisher\"",
-					"-framework",
-					"\"MJRefresh\"",
-					"-framework",
-					"\"Moya\"",
-					"-framework",
-					"\"NSObject_Rx\"",
-					"-framework",
-					"\"ObjectMapper\"",
-					"-framework",
-					"\"Result\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxDataSources\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"SVProgressHUD\"",
-					"-framework",
-					"\"SnapKit\"",
-					"-framework",
-					"\"Then\"",
-					"-framework",
-					"\"YYText\"",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zcbl.Dictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dictionary/Dictionary-Bridging-Header.h";
