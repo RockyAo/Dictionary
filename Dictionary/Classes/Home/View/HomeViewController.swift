@@ -52,6 +52,8 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(true)
         
         navigationItem.title = ""
+        
+        viewModel.test()
     }
     
     func bindViewModel() {

@@ -47,8 +47,20 @@ struct HomeViewModel {
             
             return service.playAudio(urlString: input)
         }
+        
+        
+        translateData.asObservable()
+            .throttle(1, scheduler: MainScheduler.asyncInstance)
+            .subscribe(onNext:{ item in
+                
+                service.storageNewWord(item: item)
+
+            })
+            .addDisposableTo(disposeBag)
     }
     
-    
-    
+    func test()  {
+
+        service.allHistory()
+    }
 }

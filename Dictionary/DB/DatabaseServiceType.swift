@@ -8,29 +8,32 @@
 
 import Foundation
 import RxSwift
+import RxRealm
+import RealmSwift
 
-enum DatabaseError {
+enum DatabaseError : Error{
     case creationFaild
-    case updateFaild()
-    case deletionFailed()
-    case collectionFailed()
+    case updateFaild(WordDataModel)
+    case deletionFailed(WordDataModel)
+    case collectionFailed(WordDataModel)
+    case deletionAllFailed
 }
 
 protocol DatabaseServiceType {
     
     
     @discardableResult
-    func createTask(item:WordDataModel) -> Observable<WordDataModel>
+    func createItem(item:WordDataModel) -> Observable<WordDataModel>
     
     @discardableResult
-    func delete(task:WordDataModel) -> Observable<Void>
+    func delete(item:WordDataModel) -> Observable<Void>
     
     @discardableResult
-    func update(task:WordDataModel,collection:Bool) -> Observable<WordDataModel>
+    func update(item:WordDataModel,collection:Bool) -> Observable<WordDataModel>
     
     @discardableResult
-    func collection(task:WordDataModel) -> Observable<WordDataModel>
+    func deleteAll() -> Observable<Void>
     
-    func tasks() -> Observable<WordDataModel>
+    func items() -> Observable<Results<WordDataModel>>
 
 }
