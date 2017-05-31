@@ -43,7 +43,17 @@ class HomeViewController: BaseViewController {
         let tb = UITableView(frame: CGRect.zero, style: .plain)
         tb.register(UINib.init(nibName: "HistoryTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tb.hideBottomLine()
+        tb.sectionHeaderHeight = 35
+        tb.delegate = self
         return tb
+    }()
+    
+    lazy var deleteButton: UIButton = {
+        
+        let db = UIButton(type: .custom)
+        db.setBackgroundImage(#imageLiteral(resourceName: "delete"), for: .normal)
+        db.setBackgroundImage(#imageLiteral(resourceName: "delete"), for: .highlighted)
+        return db
     }()
     
     let dataSource = RxTableViewSectionedAnimatedDataSource<WordSection>()
@@ -85,6 +95,7 @@ class HomeViewController: BaseViewController {
             .drive(wordView.rx.configureData)
             .addDisposableTo(disposeBag)
         
+        
         viewModel.sectionItems
             .bind(to: tabbleView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
@@ -98,13 +109,16 @@ class HomeViewController: BaseViewController {
             .map{ return !$0 }
             .drive(tabbleView.rx.isHidden)
             .addDisposableTo(disposeBag)
+        
+        deleteButton.rx.action = viewModel.deleteAction
     }
     
     func configureTabbleView(){
+    
         
-//        dataSource.titleForHeaderInSection = { dataSource, index in
-//            dataSource.sectionModels[index].model
-//        }
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            dataSource.sectionModels[index].model
+        }
         
         dataSource.configureCell = { [weak self] dataSource, tableView, indexPath, item in
             
@@ -167,6 +181,25 @@ extension HomeViewController{
         tabbleView.snp.makeConstraints { (make) in
             
             make.left.right.top.bottom.equalTo(0)
+        }
+    }
+}
+
+extension HomeViewController:UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        guard let headerView = view as? UITableViewHeaderFooterView else { return  }
+        
+        headerView.textLabel?.font = UIFont.main.desFont
+        headerView.textLabel?.textColor = UIColor.Main.gray.weak
+        
+        headerView.addSubview(deleteButton)
+        deleteButton.snp.makeConstraints { (make) in
+            
+            make.top.equalTo(9)
+            make.right.equalTo(-12)
+            make.width.height.equalTo(18)
         }
     }
 }

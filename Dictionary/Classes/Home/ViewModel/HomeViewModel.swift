@@ -29,6 +29,8 @@ struct HomeViewModel {
     
     let wordViewHidden:Variable<Bool> = Variable(false)
     
+    let deleteAction:Action<Void,Void>
+    
     ///output
     var translateData:Driver<WordModel>
     
@@ -67,6 +69,10 @@ struct HomeViewModel {
             return service.playAudio(urlString: input)
         }
         
+        deleteAction = Action{_ in 
+        
+            return service.databaseService.deleteAll()
+        }
         
         translateData.asObservable()
             .throttle(1, scheduler: MainScheduler.asyncInstance)
