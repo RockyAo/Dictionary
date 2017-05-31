@@ -93,6 +93,7 @@ class HomeViewController: BaseViewController {
             return self.wordView.data?.finalUrl ?? ""
         }
         
+        
     }
     
     func configureTabbleView(){

@@ -33,18 +33,18 @@
                         <state key="selected" backgroundImage="select_collect"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N7-rC-zc1">
-                        <rect key="frame" x="387" y="11.5" width="42" height="21"/>
+                        <rect key="frame" x="135" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0cY-ft-PVb" firstAttribute="leading" secondItem="3N7-rC-zc1" secondAttribute="trailing" constant="30" id="KGw-Kn-EhX"/>
+                    <constraint firstItem="0cY-ft-PVb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3N7-rC-zc1" secondAttribute="trailing" constant="30" id="KGw-Kn-EhX"/>
                     <constraint firstAttribute="trailing" secondItem="0cY-ft-PVb" secondAttribute="trailing" constant="24" id="MSM-OQ-hV3"/>
                     <constraint firstItem="HfA-UM-oFT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="S4P-gP-agE"/>
                     <constraint firstItem="HfA-UM-oFT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Sbt-Y6-jSl"/>
-                    <constraint firstItem="3N7-rC-zc1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HfA-UM-oFT" secondAttribute="trailing" constant="30" id="UX9-Ft-Wjd"/>
+                    <constraint firstItem="3N7-rC-zc1" firstAttribute="leading" secondItem="HfA-UM-oFT" secondAttribute="trailing" constant="30" id="UX9-Ft-Wjd"/>
                     <constraint firstItem="3N7-rC-zc1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bV4-f4-yWi"/>
                     <constraint firstItem="0cY-ft-PVb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="l0K-B8-yMp"/>
                 </constraints>

@@ -38,7 +38,11 @@ class HistoryTableViewCell: UITableViewCell {
             
             transString.append(item)
             transString.append("  ")
+            
+        
         }
+        
+        print(transString)
         
         translationLabel.text = transString
     }

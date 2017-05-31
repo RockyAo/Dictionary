@@ -27,6 +27,7 @@ struct HomeViewModel {
     
     let playAudioAction:Action<String,Void>
     
+    let wordViewHidden:Variable<Bool> = Variable(false)
     
     ///output
     var translateData:Driver<WordModel>

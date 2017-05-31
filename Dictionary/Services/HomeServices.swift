@@ -98,7 +98,6 @@ class HomeServices{
                 
                 return result.toArray()
             }
-            
             .map { dataArray in
                 
                 var finalArray:Array<WordModel> = []
@@ -117,13 +116,19 @@ class HomeServices{
                             array.append(trans.string)
                         }
                         
-                        wordModel.basicTranslation?.explains = array
-                        wordModel.basicTranslation?.usPhonetic = item.usPro
-                        wordModel.basicTranslation?.ukPhonetic = item.ukPro
+                        var basicTrans = BasicTranslation()
+                        
+                        basicTrans.explains = array
+                        basicTrans.usPhonetic = item.usPro
+                        basicTrans.ukPhonetic = item.ukPro
+                        
+                        wordModel.basicTranslation = basicTrans
                         
                         finalArray.append(wordModel)
                     }
                 }
+            
+                
                 return finalArray
             }
         

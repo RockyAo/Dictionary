@@ -23,6 +23,10 @@ struct BasicTranslation: Mappable{
         
     }
     
+    init() {
+        
+    }
+    
     mutating func mapping(map: Map) {
         explains 	<- map["explains"]
         ukPhonetic <- map["uk-phonetic"]
