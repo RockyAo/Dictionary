@@ -8,8 +8,9 @@
 
 import Foundation
 import ObjectMapper
+import RxDataSources
 
-struct WordModel:Mappable {
+struct WordModel:Mappable{
     
     var query:String? 
     
@@ -53,4 +54,27 @@ struct WordModel:Mappable {
         fSpeakUrl <- map["speakUrl"]
     }
     
+    
 }
+
+extension WordModel: IdentifiableType,Equatable{
+    /// Returns a Boolean value indicating whether two values are equal.
+    ///
+    /// Equality is the inverse of inequality. For any values `a` and `b`,
+    /// `a == b` implies that `a != b` is `false`.
+    ///
+    /// - Parameters:
+    ///   - lhs: A value to compare.
+    ///   - rhs: Another value to compare.
+    static func ==(lhs: WordModel, rhs: WordModel) -> Bool {
+        
+        return lhs != rhs
+    }
+
+    
+    var identity:Int{
+        
+        return Int(arc4random_uniform(100))
+    }
+}
+

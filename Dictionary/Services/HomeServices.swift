@@ -41,7 +41,8 @@ class HomeServices{
         return Observable.empty()
     }
     
-    func storageNewWord(item:WordModel) {
+    @discardableResult
+    func storageNewWord(item:WordModel) -> Observable<Void> {
         
         ///组装数据
         guard let explains = item.basicTranslation?.explains ,
@@ -52,7 +53,12 @@ class HomeServices{
             let usPro = item.basicTranslation?.usPhonetic
             else{
                 
-                return
+                return Observable.create({ (observer) -> Disposable in
+                    
+                    observer.onError(DatabaseError.creationFaild)
+                    
+                    return Disposables.create()
+                })
         }
         
         if explains.count > 0{
@@ -71,11 +77,18 @@ class HomeServices{
                 dataModel.translation.append(translationObj)
             }
             
-            databaseService.createItem(item: dataModel)
+            return databaseService.createItem(item: dataModel).map({ (data) in
+                
+                
+            })
             
         }
         
-
+        return Observable.create({ (observer) -> Disposable in
+            
+            observer.onCompleted()
+            return Disposables.create()
+        })
     }
     
     func allHistory() -> Observable<[WordModel]>{
@@ -85,6 +98,7 @@ class HomeServices{
                 
                 return result.toArray()
             }
+            
             .map { dataArray in
                 
                 var finalArray:Array<WordModel> = []
@@ -95,20 +109,24 @@ class HomeServices{
                     wordModel.tSpeakUrl = item.toSpeakUrl
                     wordModel.fSpeakUrl = item.fromSpeakUrl
                     
-                    var array:Array<String> = []
+                    if item.translation.count > 0{
                     
-                    for trans in item.translation.toArray(){
-                        array.append(trans.string)
+                        var array:Array<String> = []
+                        
+                        for trans in item.translation.toArray(){
+                            array.append(trans.string)
+                        }
+                        
+                        wordModel.basicTranslation?.explains = array
+                        wordModel.basicTranslation?.usPhonetic = item.usPro
+                        wordModel.basicTranslation?.ukPhonetic = item.ukPro
+                        
+                        finalArray.append(wordModel)
                     }
-                    
-                    wordModel.basicTranslation?.explains = array
-                    wordModel.basicTranslation?.usPhonetic = item.usPro
-                    wordModel.basicTranslation?.ukPhonetic = item.ukPro
-                    
-                    finalArray.append(wordModel)
                 }
                 return finalArray
             }
+        
     }
 }
 

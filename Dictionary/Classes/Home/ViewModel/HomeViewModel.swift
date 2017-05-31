@@ -10,6 +10,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 import Action
+import RxDataSources
+
+typealias WordSection = AnimatableSectionModel<String,WordModel>
 
 struct HomeViewModel {
     
@@ -24,9 +27,20 @@ struct HomeViewModel {
     
     let playAudioAction:Action<String,Void>
     
+    
     ///output
     var translateData:Driver<WordModel>
+    
+    var sectionItems:Observable<[WordSection]>{
+        
+        return service.allHistory()
+            .map({ (dataArray) in
+                    
+                return [WordSection(model: "历史查询", items: dataArray)]
+        })
 
+    }
+    
     
     init(coordinator:SceneCoordinatorType,service:HomeServices) {
         
@@ -59,8 +73,5 @@ struct HomeViewModel {
             .addDisposableTo(disposeBag)
     }
     
-    func test()  {
-
-        service.allHistory()
-    }
+    
 }

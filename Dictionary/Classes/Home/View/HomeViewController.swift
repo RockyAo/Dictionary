@@ -10,6 +10,9 @@ import UIKit
 import SnapKit
 import Action
 import SVProgressHUD
+import RxDataSources
+
+let cellIdentifier = "HOME_TABLE_CELL"
 
 class HomeViewController: BaseViewController {
 
@@ -35,7 +38,14 @@ class HomeViewController: BaseViewController {
         return wv
     }()
     
+    lazy var tabbleView: UITableView = {
+        
+        let tb = UITableView(frame: CGRect.zero, style: .plain)
+        tb.register(UINib.init(nibName: "HistoryTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        return tb
+    }()
     
+    let dataSource = RxTableViewSectionedAnimatedDataSource<WordSection>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +56,7 @@ class HomeViewController: BaseViewController {
         setupSubviews()
         
         bindViewModel()
+        configureTabbleView()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +64,7 @@ class HomeViewController: BaseViewController {
         
         navigationItem.title = ""
         
-        viewModel.test()
+        
     }
     
     func bindViewModel() {
@@ -73,13 +84,36 @@ class HomeViewController: BaseViewController {
             .drive(wordView.rx.configureData)
             .addDisposableTo(disposeBag)
         
-
+        viewModel.sectionItems
+            .bind(to: tabbleView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
         
         wordView.playButton.rx.bind(to: viewModel.playAudioAction) { _  in
             
             return self.wordView.data?.finalUrl ?? ""
         }
         
+    }
+    
+    func configureTabbleView(){
+        
+//        dataSource.titleForHeaderInSection = { dataSource, index in
+//            dataSource.sectionModels[index].model
+//        }
+        
+        dataSource.configureCell = { [weak self] dataSource, tableView, indexPath, item in
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier:
+                cellIdentifier, for: indexPath) as! HistoryTableViewCell
+            
+                cell.configure(with: item)
+//            if let strongSelf = self {
+//                
+//                cell.configure(with: item)
+//            }
+            return cell
+        }
+
     }
 
 }
@@ -123,5 +157,11 @@ extension HomeViewController{
             })
             .disposed(by: disposeBag)
         view.addGestureRecognizer(tapBackground)
+        
+        view.addSubview(tabbleView)
+        tabbleView.snp.makeConstraints { (make) in
+            
+            make.left.right.top.bottom.equalTo(0)
+        }
     }
 }
