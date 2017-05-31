@@ -93,7 +93,10 @@ class HomeViewController: BaseViewController {
             return self.wordView.data?.finalUrl ?? ""
         }
         
-        
+        wordView.rx.hidden.asDriver(onErrorJustReturn: false)
+            .map{ return !$0 }
+            .drive(tabbleView.rx.isHidden)
+            .addDisposableTo(disposeBag)
     }
     
     func configureTabbleView(){

@@ -24,15 +24,35 @@ class DatabaseService:DatabaseServiceType{
         }
     }
     
+    
+    /// 入库并自动过滤已存在数据
+    ///
+    /// - Parameter item: Realm模型
+    /// - Returns: Observable<>
     @discardableResult
     func createItem(item: WordDataModel) -> Observable<WordDataModel> {
         
         let result = withRealm("creating") { realm -> Observable<WordDataModel> in
             
-            try realm.write {
+            let realm = try Realm()
+            let objectArray = realm.objects(WordDataModel.self).toArray().filter({ (model) -> Bool in
                 
-                realm.add(item)
+                if item.name == model.name{
+                
+                    return true
+                }
+                
+                return false
+            })
+            
+            if objectArray.count <= 0{
+                try realm.write {
+                    
+                    realm.add(item)
+                }
+                return .just(item)
             }
+            
             return .just(item)
         }
         return result ?? .error(DatabaseError.creationFaild)

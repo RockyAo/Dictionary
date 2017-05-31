@@ -8,7 +8,7 @@ import RxSwift
 import AVFoundation
 import RxRealm
 import RealmSwift
-
+import NSObject_Rx
 
 class HomeServices{
     
@@ -60,6 +60,8 @@ class HomeServices{
                     return Disposables.create()
                 })
         }
+    
+        
         
         if explains.count > 0{
             

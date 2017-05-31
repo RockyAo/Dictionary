@@ -68,7 +68,7 @@ extension WordModel: IdentifiableType,Equatable{
     ///   - rhs: Another value to compare.
     static func ==(lhs: WordModel, rhs: WordModel) -> Bool {
         
-        return lhs != rhs
+        return lhs.query != rhs.query
     }
 
     
