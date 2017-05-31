@@ -42,6 +42,7 @@ class HomeViewController: BaseViewController {
         
         let tb = UITableView(frame: CGRect.zero, style: .plain)
         tb.register(UINib.init(nibName: "HistoryTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        tb.hideBottomLine()
         return tb
     }()
     

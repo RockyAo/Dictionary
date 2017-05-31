@@ -22,7 +22,7 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         automaticallyAdjustsScrollViewInsets = false
-        
+        edgesForExtendedLayout = UIRectEdge.left
     }
     
     override func viewWillAppear(_ animated: Bool) {

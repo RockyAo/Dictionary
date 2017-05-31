@@ -51,6 +51,10 @@ struct HomeViewModel {
         
         translateData = searchText.asDriver()
             .skip(1)
+            .filter({ (data) -> Bool in
+                
+                return data.characters.count > 1
+            })
             .flatMap{
 
                 return service.requestData(string: $0).asDriver(onErrorJustReturn: WordModel())

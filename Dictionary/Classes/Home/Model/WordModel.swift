@@ -74,7 +74,9 @@ extension WordModel: IdentifiableType,Equatable{
     
     var identity:Int{
         
-        return Int(arc4random_uniform(100))
+        return Int(arc4random_uniform(10000000))
     }
 }
+
+
 
