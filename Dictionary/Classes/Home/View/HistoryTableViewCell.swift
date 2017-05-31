@@ -42,8 +42,6 @@ class HistoryTableViewCell: UITableViewCell {
         
         }
         
-        print(transString)
-        
         translationLabel.text = transString
     }
 
