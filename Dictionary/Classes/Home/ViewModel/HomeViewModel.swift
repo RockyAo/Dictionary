@@ -25,11 +25,9 @@ struct HomeViewModel {
     /// input:
     let searchText:Variable<String> = Variable("")
     
-    let playAudioAction:Action<String,Void>
-    
     let wordViewHidden:Variable<Bool> = Variable(false)
     
-    let deleteAction:Action<Void,Void>
+    
     
     ///output
     var translateData:Driver<WordModel>
@@ -44,6 +42,11 @@ struct HomeViewModel {
 
     }
     
+    let deleteAction:Action<Void,Void>
+    
+    let playAudioAction:Action<String,Void>
+    
+//    let collectAction:Action<Bool,Void>
     
     init(coordinator:SceneCoordinatorType,service:HomeServices) {
         
@@ -73,6 +76,11 @@ struct HomeViewModel {
         
             return service.databaseService.deleteAll()
         }
+        
+//        collectAction = Action{ input in
+//            
+//            return service.update(item: <#T##WordModel#>, select: <#T##Bool#>)
+//        }
         
         translateData.asObservable()
             .throttle(1, scheduler: MainScheduler.asyncInstance)
