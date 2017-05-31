@@ -35,17 +35,21 @@ class DatabaseService:DatabaseServiceType{
         let result = withRealm("creating") { realm -> Observable<WordDataModel> in
             
             let realm = try Realm()
-            let objectArray = realm.objects(WordDataModel.self).toArray().filter({ (model) -> Bool in
+            let objectArray = realm.objects(WordDataModel.self).toArray()
+            
+            ///设置主键+1
+            item.id = objectArray.count + 1
+            
+            if objectArray.filter({ (model) -> Bool in
                 
                 if item.name == model.name{
-                
+                    
                     return true
                 }
                 
                 return false
-            })
-            
-            if objectArray.count <= 0{
+                
+            }).count <= 0 {
                 try realm.write {
                     
                     realm.add(item)
@@ -88,7 +92,8 @@ class DatabaseService:DatabaseServiceType{
         
         let result = withRealm("updating collection") { realm -> Observable<WordDataModel> in
             try realm.write {
-                item.collection = collection
+                
+                realm.add(item, update: true)
             }
             return .just(item)
         }

@@ -23,6 +23,13 @@ class WordDataModel: Object {
     
     dynamic var collection:Bool = false
     
+    dynamic var id:Int = 0
+    
     var translation:List<Translation> = List<Translation>()
     
+    override class func primaryKey() -> String? {
+        
+        return "id"
+    }
+
 }

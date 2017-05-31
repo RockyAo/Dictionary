@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Action
 
 class HistoryTableViewCell: UITableViewCell {
 
@@ -20,6 +21,11 @@ class HistoryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        collectionButton.rx.tap.asDriver()
+            .map{ return !self.collectionButton.isSelected }
+            .drive(collectionButton.rx.isSelected)
+            .addDisposableTo(disposeBag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,7 +34,7 @@ class HistoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with item: WordModel) {
+    func configure(with item: WordModel,action:Action<WordModel,Void>) {
         
         wordLabel.text = item.query
         
@@ -42,6 +48,17 @@ class HistoryTableViewCell: UITableViewCell {
         }
         
         translationLabel.text = transString
+        
+        collectionButton.isSelected = item.selected
+        
+        var returnData = item
+        
+        collectionButton.rx.bind(to: action) { [weak self] _ in
+            
+            returnData.selected = (self?.collectionButton.isSelected)!
+    
+            return returnData
+        }
     }
 
 }

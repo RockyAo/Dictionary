@@ -38,6 +38,8 @@ struct WordModel:Mappable{
         }
     }
     
+    var selected = false
+    
     init?(map: Map) {
         
     }

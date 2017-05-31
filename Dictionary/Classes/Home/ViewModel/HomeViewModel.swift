@@ -46,7 +46,7 @@ struct HomeViewModel {
     
     let playAudioAction:Action<String,Void>
     
-//    let collectAction:Action<Bool,Void>
+    let collectAction:Action<WordModel,Void>
     
     init(coordinator:SceneCoordinatorType,service:HomeServices) {
         
@@ -77,10 +77,10 @@ struct HomeViewModel {
             return service.databaseService.deleteAll()
         }
         
-//        collectAction = Action{ input in
-//            
-//            return service.update(item: <#T##WordModel#>, select: <#T##Bool#>)
-//        }
+        collectAction = Action{ input in
+            
+            return service.update(item: input)
+        }
         
         translateData.asObservable()
             .throttle(1, scheduler: MainScheduler.asyncInstance)

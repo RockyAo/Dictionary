@@ -111,6 +111,8 @@ class HomeViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         
         deleteButton.rx.action = viewModel.deleteAction
+        
+        
     }
     
     func configureTabbleView(){
@@ -125,11 +127,11 @@ class HomeViewController: BaseViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier:
                 cellIdentifier, for: indexPath) as! HistoryTableViewCell
             
-                cell.configure(with: item)
-//            if let strongSelf = self {
-//                
 //                cell.configure(with: item)
-//            }
+            if let strongSelf = self {
+                
+                cell.configure(with: item,action: strongSelf.viewModel.collectAction)
+            }
             return cell
         }
 

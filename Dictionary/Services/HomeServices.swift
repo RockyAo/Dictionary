@@ -44,48 +44,6 @@ class HomeServices{
     @discardableResult
     func storageNewWord(item:WordModel) -> Observable<Void> {
         
-//        ///组装数据
-//        guard let explains = item.basicTranslation?.explains ,
-//            let name = item.query,
-//            let tSpeakUrl = item.tSpeakUrl,
-//            let fSpeakUrl = item.fSpeakUrl,
-//            let ukPro = item.basicTranslation?.ukPhonetic,
-//            let usPro = item.basicTranslation?.usPhonetic
-//            else{
-//                
-//                return Observable.create({ (observer) -> Disposable in
-//                    
-//                    observer.onError(DatabaseError.creationFaild)
-//                    
-//                    return Disposables.create()
-//                })
-//        }
-//    
-//        
-//        
-//        if explains.count > 0{
-//            
-//            
-//            let dataModel = WordDataModel()
-//            dataModel.name = name
-//            dataModel.fromSpeakUrl = fSpeakUrl
-//            dataModel.toSpeakUrl = tSpeakUrl
-//            dataModel.ukPro = ukPro
-//            dataModel.usPro = usPro
-//            for item in explains{
-//                
-//                let translationObj = Translation()
-//                translationObj.string = item
-//                dataModel.translation.append(translationObj)
-//            }
-//            
-//            return databaseService.createItem(item: dataModel).map({ (data) in
-//                
-//                
-//            })
-        
-//        }
-        
         let data = configureData(data: item)
         
         if data.translation.toArray().count > 0 {
@@ -119,7 +77,7 @@ class HomeServices{
                     wordModel.query = item.name
                     wordModel.tSpeakUrl = item.toSpeakUrl
                     wordModel.fSpeakUrl = item.fromSpeakUrl
-                    
+                    wordModel.selected = item.collection
                     if item.translation.count > 0{
                     
                         var array:Array<String> = []
@@ -146,11 +104,17 @@ class HomeServices{
         
     }
     
-    func update(item:WordModel,select:Bool) {
+    func update(item:WordModel) -> Observable<Void>{
         
         let dataModel = configureData(data: item)
         
-        databaseService.update(item: dataModel, collection: select)
+        databaseService.update(item: dataModel, collection: item.selected)
+            .subscribe{
+                
+                print($0)
+            }
+        
+        return Observable.empty()
     }
     
     fileprivate func configureData(data:WordModel) -> WordDataModel{
@@ -173,6 +137,7 @@ class HomeServices{
         dataModel.toSpeakUrl = tSpeakUrl
         dataModel.ukPro = ukPro
         dataModel.usPro = usPro
+        dataModel.collection = data.selected
         
         for item in explains{
             
