@@ -12,4 +12,5 @@ enum DictionaryError: Error{
     
     case mapJsonError
     case netError(discription:String)
+    case mapError(desciption:String)
 }

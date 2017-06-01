@@ -65,40 +65,7 @@ class HomeServices:BaseService{
                 
                 return result.toArray()
             }
-            .map { dataArray in
-                
-                var finalArray:Array<WordModel> = []
-    
-                for item in dataArray{
-                    var wordModel = WordModel()
-                    wordModel.query = item.name
-                    wordModel.tSpeakUrl = item.toSpeakUrl
-                    wordModel.fSpeakUrl = item.fromSpeakUrl
-                    wordModel.selected = item.collection
-                    if item.translation.count > 0{
-                    
-                        var array:Array<String> = []
-                        
-                        for trans in item.translation.toArray(){
-                            array.append(trans.string)
-                        }
-                        
-                        var basicTrans = BasicTranslation()
-                        
-                        basicTrans.explains = array
-                        basicTrans.usPhonetic = item.usPro
-                        basicTrans.ukPhonetic = item.ukPro
-                        
-                        wordModel.basicTranslation = basicTrans
-                        
-                        finalArray.append(wordModel)
-                    }
-                }
-            
-                
-                return finalArray
-            }
-        
+            .mapDataModelArrayToWordModelArray()
     }
     
     func update(item:WordModel) -> Observable<Void>{
