@@ -93,6 +93,7 @@ class DatabaseService:DatabaseServiceType{
         
         let result = withRealm("updating collection") { realm -> Observable<WordDataModel> in
             
+            let realm = try Realm()
             do{
                 
                 try realm.write {

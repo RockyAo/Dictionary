@@ -61,10 +61,7 @@ class HomeServices:BaseService{
     func allHistory() -> Observable<[WordModel]>{
         
         return databaseService.items()
-            .map { (result)  in
-                
-                return result.toArray()
-            }
+            .map { return $0.toArray() }
             .mapDataModelArrayToWordModelArray()
     }
     
