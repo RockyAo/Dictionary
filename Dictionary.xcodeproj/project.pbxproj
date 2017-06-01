@@ -21,6 +21,7 @@
 		5C0902F31EDC6EB80099F80E /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902F11EDC6EB80099F80E /* HistoryTableViewCell.swift */; };
 		5C0902F41EDC6EB80099F80E /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0902F21EDC6EB80099F80E /* HistoryTableViewCell.xib */; };
 		5C0902F61EDF055F0099F80E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902F51EDF055F0099F80E /* UITableView+Extension.swift */; };
+		5C0902F81EDF8CC90099F80E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902F71EDF8CC90099F80E /* BaseService.swift */; };
 		5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687441ED4298300ABC9D9 /* AppDelegate.swift */; };
 		5CE6874F1ED4298300ABC9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE6874D1ED4298300ABC9D9 /* LaunchScreen.storyboard */; };
 		5CE6875A1ED4298300ABC9D9 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687591ED4298300ABC9D9 /* DictionaryTests.swift */; };
@@ -95,6 +96,7 @@
 		5C0902F11EDC6EB80099F80E /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		5C0902F21EDC6EB80099F80E /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		5C0902F51EDF055F0099F80E /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		5C0902F71EDF8CC90099F80E /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		5CE687411ED4298300ABC9D9 /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE687441ED4298300ABC9D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CE6874E1ED4298300ABC9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				67A6DB5A87CA086BEB0D25CF /* HomeServices.swift */,
+				5C0902F71EDF8CC90099F80E /* BaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				5CE687D21ED7DE7700ABC9D9 /* String+Extension.swift in Sources */,
 				5CE687A51ED433A700ABC9D9 /* UINavigationController+Rx.swift in Sources */,
 				5CE687B81ED6BB4A00ABC9D9 /* UIImage+Extension.swift in Sources */,
+				5C0902F81EDF8CC90099F80E /* BaseService.swift in Sources */,
 				5CE687A71ED433E100ABC9D9 /* Scene+ViewController.swift in Sources */,
 				5CE6879F1ED430CB00ABC9D9 /* Scene.swift in Sources */,
 				5CE687A11ED430FB00ABC9D9 /* SceneTransitionType.swift in Sources */,

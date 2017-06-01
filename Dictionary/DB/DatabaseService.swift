@@ -17,6 +17,7 @@ class DatabaseService:DatabaseServiceType{
     fileprivate func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T? {
         do {
             let realm = try Realm()
+            
             return try action(realm)
         } catch let err {
             print("Failed \(operation) realm with error: \(err)")
@@ -91,9 +92,17 @@ class DatabaseService:DatabaseServiceType{
     func update(item: WordDataModel, collection: Bool) -> Observable<WordDataModel> {
         
         let result = withRealm("updating collection") { realm -> Observable<WordDataModel> in
-            try realm.write {
+            
+            do{
                 
-                realm.add(item, update: true)
+                try realm.write {
+                    
+                    item.collection = collection
+                    
+                }
+            }catch let error {
+            
+                print(error)
             }
             return .just(item)
         }
