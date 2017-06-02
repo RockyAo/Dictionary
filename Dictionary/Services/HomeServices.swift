@@ -45,9 +45,9 @@ class HomeServices:BaseService{
         
         if data.translation.toArray().count > 0 {
             
-            return databaseService.createItem(item: data).map({ (data) in
-                
-            })
+            return databaseService.createAndUpdateItem(item: data)
+                .map{ _ in}
+            
         }
         
         
@@ -69,12 +69,7 @@ class HomeServices:BaseService{
         
         let dataModel = configureData(data: item)
         
-        databaseService.update(item: dataModel, collection: item.selected)
-            .debug()
-            .subscribe{
-                
-                print($0)
-            }
+        _ = databaseService.createAndUpdateItem(item: dataModel)
         
         return Observable.empty()
     }

@@ -23,7 +23,7 @@ protocol DatabaseServiceType {
     
     
     @discardableResult
-    func createItem(item:WordDataModel) -> Observable<WordDataModel>
+    func createAndUpdateItem(item:WordDataModel) -> Observable<WordDataModel>
     
     @discardableResult
     func delete(item:WordDataModel) -> Observable<Void>

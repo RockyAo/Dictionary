@@ -31,37 +31,46 @@ class DatabaseService:DatabaseServiceType{
     /// - Parameter item: Realm模型
     /// - Returns: Observable<>
     @discardableResult
-    func createItem(item: WordDataModel) -> Observable<WordDataModel> {
+    func createAndUpdateItem(item: WordDataModel) -> Observable<WordDataModel>{
         
-        let result = withRealm("creating") { realm -> Observable<WordDataModel> in
-            
-            let realm = try Realm()
-            let objectArray = realm.objects(WordDataModel.self).toArray()
-            
-            ///设置主键+1
-            item.id = objectArray.count + 1
-            
-            if objectArray.filter({ (model) -> Bool in
+       let result = withRealm("create item") { (realm) -> Observable<WordDataModel> in
+        
+            let realm = try! Realm()
+        
+            let dataArray = realm.objects(WordDataModel.self)
+                    .toArray()
+        
+            item.id = dataArray.count + 1
+        
+            let hasSave = dataArray.filter({ (model) -> Bool in
                 
-                if item.name == model.name{
-                    
-                    return true
-                }
+                    if model.name == item.name{
                 
-                return false
+                        return true
+                    }
                 
-            }).count <= 0 {
-                try realm.write {
-                    
-                    realm.add(item)
-                }
-                return .just(item)
+                    return false
+                })
+        
+        
+            if hasSave.count <= 0{
+        
+                _ = Observable.just(item)
+                    .subscribe(realm.rx.add())
+            }else{
+                
+                ///add update = true  会导致多存一个对象。原因未知。
+                _ = Observable.just(item)
+                    .subscribe{
+                        _ = realm.rx.delete()
+                        _ = realm.rx.add()
+                    }
             }
-            
-            return .just(item)
-        }
-        return result ?? .error(DatabaseError.creationFaild)
         
+            return .just(item)
+       }
+        
+       return result ?? .error(DatabaseError.creationFaild)
     }
     
     @discardableResult
@@ -87,7 +96,7 @@ class DatabaseService:DatabaseServiceType{
         return result ?? .error(DatabaseError.deletionAllFailed)
     }
 
-    
+    ////未知原因导致更新不了数据，该方法
     @discardableResult
     func update(item: WordDataModel, collection: Bool) -> Observable<WordDataModel> {
         
