@@ -28,8 +28,12 @@ class WordDataModel: Object {
     var translation:List<Translation> = List<Translation>()
     
     override class func primaryKey() -> String? {
-        
+
         return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["name"]
     }
 
 }

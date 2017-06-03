@@ -18,7 +18,7 @@ class HomeServices:BaseService{
         return dictionaryAPI.request(.query(target: string))
             .asObservable()
             .mapJSON()
-            .mapToObjectWithNoError(modelTypeL: WordModel.self)
+            .mapToObjectWithNoError(modelType: WordModel.self)
         
     }
     
@@ -39,23 +39,19 @@ class HomeServices:BaseService{
     }
     
     @discardableResult
-    func storageNewWord(item:WordModel) -> Observable<Void> {
+    func storageNewWord(item:WordModel) -> Observable<WordModel> {
         
-        let data = configureData(data: item)
+        let data = configureData(data: item,needNewId: true)
         
         if data.translation.toArray().count > 0 {
             
             return databaseService.createAndUpdateItem(item: data)
-                .map{ _ in}
+                .mapWordDataModelToWordModel()
             
         }
         
         
-        return Observable.create({ (observer) -> Disposable in
-            
-            observer.onCompleted()
-            return Disposables.create()
-        })
+        return Observable.empty()
     }
     
     func allHistory() -> Observable<[WordModel]>{
@@ -70,6 +66,10 @@ class HomeServices:BaseService{
         let dataModel = configureData(data: item)
         
         _ = databaseService.createAndUpdateItem(item: dataModel)
+                .mapWordDataModelToWordModel()
+                .subscribe{
+                    print($0)
+                }
         
         return Observable.empty()
     }

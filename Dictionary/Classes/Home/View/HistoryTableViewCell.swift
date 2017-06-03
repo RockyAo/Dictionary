@@ -23,7 +23,10 @@ class HistoryTableViewCell: UITableViewCell {
         // Initialization code
         
         collectionButton.rx.tap.asDriver()
-            .map{ return !self.collectionButton.isSelected }
+            .map{ [unowned self] in
+                
+                return !self.collectionButton.isSelected
+            }
             .drive(collectionButton.rx.isSelected)
             .addDisposableTo(disposeBag)
     }
@@ -53,10 +56,11 @@ class HistoryTableViewCell: UITableViewCell {
         
         var returnData = item
         
+        
         collectionButton.rx.bind(to: action) { [weak self] _ in
             
             returnData.selected = (self?.collectionButton.isSelected)!
-    
+            
             return returnData
         }
     }

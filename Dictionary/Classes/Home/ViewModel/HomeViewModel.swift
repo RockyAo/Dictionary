@@ -35,10 +35,12 @@ struct HomeViewModel {
     var sectionItems:Observable<[WordSection]>{
         
         return service.allHistory()
+            .observeOn(scheduler: .Main)
             .map({ (dataArray) in
                     
                 return [WordSection(model: "历史查询", items: dataArray)]
-        })
+            })
+            
 
     }
     
@@ -48,6 +50,7 @@ struct HomeViewModel {
     
     let collectAction:Action<WordModel,Void>
     
+    
     init(coordinator:SceneCoordinatorType,service:HomeServices) {
         
         self.coordinator = coordinator
@@ -56,6 +59,7 @@ struct HomeViewModel {
         
         translateData = searchText.asDriver()
             .skip(1)
+            .throttle(1)
             .filter({ (data) -> Bool in
                 
                 return data.characters.count > 1
@@ -63,6 +67,10 @@ struct HomeViewModel {
             .flatMap{
 
                 return service.requestData(string: $0).asDriver(onErrorJustReturn: WordModel())
+            }
+            .flatMap{
+        
+                return service.storageNewWord(item: $0).asDriver(onErrorJustReturn: WordModel())
             }
         
         playAudioAction = Action{ input in
@@ -82,14 +90,8 @@ struct HomeViewModel {
             return service.update(item: input)
         }
         
-        translateData.asObservable()
-            .throttle(1, scheduler: MainScheduler.asyncInstance)
-            .subscribe(onNext:{ item in
-                
-                service.storageNewWord(item: item)
-
-            })
-            .addDisposableTo(disposeBag)
+        
+        
     }
     
     

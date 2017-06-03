@@ -40,6 +40,8 @@ struct WordModel:Mappable{
     
     var selected = false
     
+    var id = 0
+    
     init?(map: Map) {
         
     }

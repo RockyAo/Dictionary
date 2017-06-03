@@ -67,6 +67,7 @@ class HomeViewController: BaseViewController {
         setupSubviews()
         
         bindViewModel()
+        
         configureTabbleView()
         
     }
@@ -111,7 +112,6 @@ class HomeViewController: BaseViewController {
             .addDisposableTo(disposeBag)
         
         deleteButton.rx.action = viewModel.deleteAction
-        
         
     }
     

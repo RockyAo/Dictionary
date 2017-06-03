@@ -41,7 +41,7 @@ extension Observable{
         })
     }
     
-    func mapToObjectWithNoError<T:Mappable>(modelTypeL:T.Type) -> Observable<T> {
+    func mapToObjectWithNoError<T:Mappable>(modelType:T.Type) -> Observable<T> {
         
         return self.map({ response in
             

@@ -16,7 +16,7 @@ class BaseService {
     
     let databaseService = DatabaseService()
     
-    final func configureData(data:WordModel) -> WordDataModel{
+    final func configureData(data:WordModel,needNewId:Bool = false) -> WordDataModel{
         
         ///组装数据
         guard let explains = data.basicTranslation?.explains ,
@@ -37,6 +37,13 @@ class BaseService {
         dataModel.ukPro = ukPro
         dataModel.usPro = usPro
         dataModel.collection = data.selected
+        if needNewId == true {
+            
+            dataModel.id = Int(NSDate.timeIntervalSinceReferenceDate)
+        }else{
+        
+            dataModel.id = data.id
+        }
         
         for item in explains{
             

@@ -158,7 +158,10 @@ class WordView: UIView {
         
         collectionButton.rx.tap
             .asDriver()
-            .map{ !self.collectionButton.isSelected }
+            .map{ [unowned self] in
+               
+               return !self.collectionButton.isSelected
+            }
             .drive(collectionButton.rx.isSelected)
             .addDisposableTo(disposeBag)
     }

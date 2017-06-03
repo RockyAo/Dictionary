@@ -44,6 +44,7 @@ extension Observable{
                 wordModel.tSpeakUrl = item.toSpeakUrl
                 wordModel.fSpeakUrl = item.fromSpeakUrl
                 wordModel.selected = item.collection
+                wordModel.id = item.id
                 if item.translation.count > 0{
                     
                     var array:Array<String> = []
@@ -67,6 +68,41 @@ extension Observable{
             
             return finalArray
             
+        })
+    }
+    
+    func mapWordDataModelToWordModel() -> Observable<WordModel> {
+        return self.map({ (response) in
+            
+            guard let dataModel = response as? WordDataModel else {
+                throw DictionaryError.mapError(desciption: "transform model faild")
+            }
+            
+            var wordModel = WordModel()
+            wordModel.query = dataModel.name
+            wordModel.tSpeakUrl = dataModel.toSpeakUrl
+            wordModel.fSpeakUrl = dataModel.fromSpeakUrl
+            wordModel.selected = dataModel.collection
+            wordModel.id = dataModel.id
+            if dataModel.translation.count > 0{
+                
+                var array:Array<String> = []
+                
+                for trans in dataModel.translation.toArray(){
+                    array.append(trans.string)
+                }
+                
+                var basicTrans = BasicTranslation()
+                
+                basicTrans.explains = array
+                basicTrans.usPhonetic = dataModel.usPro
+                basicTrans.ukPhonetic = dataModel.ukPro
+                
+                wordModel.basicTranslation = basicTrans
+                
+            }
+            
+            return wordModel
         })
     }
 }
