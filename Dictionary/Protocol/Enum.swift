@@ -14,3 +14,8 @@ enum DictionaryError: Error{
     case netError(discription:String)
     case mapError(desciption:String)
 }
+
+enum PlayAudioError:Error {
+    case playFaild
+}
+

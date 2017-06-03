@@ -31,8 +31,8 @@ class HomeViewController: BaseViewController {
         return sb
     }()
     
-    lazy var wordView: WordView = {
-        let wv = WordView()
+    lazy var wordView: VocabularyView = {
+        let wv = VocabularyView()
         wv.sizeToFit()
         wv.isHidden = true
         return wv

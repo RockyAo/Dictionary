@@ -37,37 +37,8 @@ class DatabaseService:DatabaseServiceType{
         
             let realm = try! Realm()
         
-        
             _ = Observable.just(item)
-                .debug()
                 .subscribe(realm.rx.add(update: true))
-        
-//            let hasSave = realm.objects(WordDataModel.self)
-//                            .toArray()
-//                            .filter({ (model) -> Bool in
-//                
-//                                if model.name == item.name{
-//                
-//                                    return true
-//                                }
-//                
-//                                return false
-//                            })
-//        
-//        
-//            if hasSave.count <= 0{
-//                
-//                
-//            }else{
-//                
-//
-//                _ = Observable.just(item)
-//                    .debug()
-//                    .subscribe{
-////                        _ = realm.rx.delete()
-//                        _ = realm.rx.add(update: true)
-//                    }
-//            }
         
             return .just(item)
        }

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class WordView: UIView {
+class VocabularyView: UIView {
     
     let disposeBag = DisposeBag()
 
@@ -172,7 +172,7 @@ class WordView: UIView {
     
 }
 
-extension Reactive where Base:WordView{
+extension Reactive where Base:VocabularyView{
 
     var configureData:UIBindingObserver<Base,WordModel>{
     

@@ -48,7 +48,7 @@ struct HomeViewModel {
     
     let playAudioAction:Action<String,Void>
     
-    let collectAction:Action<WordModel,Void>
+    let collectAction:Action<WordModel,WordModel>
     
     
     init(coordinator:SceneCoordinatorType,service:HomeServices) {

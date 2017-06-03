@@ -8,6 +8,7 @@ import RxSwift
 import AVFoundation
 
 
+
 class HomeServices:BaseService{
     
     var player:AVPlayer?
@@ -25,16 +26,15 @@ class HomeServices:BaseService{
     
     func playAudio(urlString:String) -> Observable<Void> {
         
-        print(urlString)
         
         if let url = URL(string: urlString){
             
             player = AVPlayer(url: url)
             
             player?.play()
+            
         }
         
-       
         return Observable.empty()
     }
     
@@ -49,11 +49,11 @@ class HomeServices:BaseService{
                 .mapWordDataModelToWordModel()
             
         }
-        
-        
-        return Observable.empty()
+
+        return .error(DatabaseError.creationFaild)
     }
     
+
     func allHistory() -> Observable<[WordModel]>{
         
         return databaseService.items()
@@ -61,17 +61,13 @@ class HomeServices:BaseService{
             .mapDataModelArrayToWordModelArray()
     }
     
-    func update(item:WordModel) -> Observable<Void>{
+    func update(item:WordModel) -> Observable<WordModel>{
         
         let dataModel = configureData(data: item)
         
-        _ = databaseService.createAndUpdateItem(item: dataModel)
+        return databaseService.createAndUpdateItem(item: dataModel)
                 .mapWordDataModelToWordModel()
-                .subscribe{
-                    print($0)
-                }
         
-        return Observable.empty()
     }
     
 }

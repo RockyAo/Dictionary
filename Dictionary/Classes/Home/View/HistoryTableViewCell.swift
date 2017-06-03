@@ -37,7 +37,7 @@ class HistoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(with item: WordModel,action:Action<WordModel,Void>) {
+    func configure(with item: WordModel,action:Action<WordModel,WordModel>) {
         
         wordLabel.text = item.query
         

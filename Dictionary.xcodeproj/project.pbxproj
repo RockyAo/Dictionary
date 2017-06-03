@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C0902D71ED81DF30099F80E /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902D61ED81DF30099F80E /* Font+Extension.swift */; };
-		5C0902D91ED81E880099F80E /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902D81ED81E880099F80E /* WordView.swift */; };
+		5C0902D91ED81E880099F80E /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902D81ED81E880099F80E /* VocabularyView.swift */; };
 		5C0902DB1ED8212B0099F80E /* BasicTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DA1ED8212B0099F80E /* BasicTranslation.swift */; };
 		5C0902DD1ED82C5B0099F80E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DC1ED82C5B0099F80E /* UIView+Extension.swift */; };
 		5C0902DF1ED82D6C0099F80E /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */; };
@@ -83,7 +83,7 @@
 		233DDD1D2A11E22491313E9B /* Pods-DictionaryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DictionaryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DictionaryUITests/Pods-DictionaryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		501E71E0FD7742D3D36E99E1 /* Pods-Dictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dictionary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dictionary/Pods-Dictionary.release.xcconfig"; sourceTree = "<group>"; };
 		5C0902D61ED81DF30099F80E /* Font+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
-		5C0902D81ED81E880099F80E /* WordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		5C0902D81ED81E880099F80E /* VocabularyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		5C0902DA1ED8212B0099F80E /* BasicTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTranslation.swift; sourceTree = "<group>"; };
 		5C0902DC1ED82C5B0099F80E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5C0902DE1ED82D6C0099F80E /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE687901ED42F6100ABC9D9 /* HomeViewController.swift */,
-				5C0902D81ED81E880099F80E /* WordView.swift */,
+				5C0902D81ED81E880099F80E /* VocabularyView.swift */,
 				5C0902F11EDC6EB80099F80E /* HistoryTableViewCell.swift */,
 				5C0902F21EDC6EB80099F80E /* HistoryTableViewCell.xib */,
 			);
@@ -820,7 +820,7 @@
 				5CE687A11ED430FB00ABC9D9 /* SceneTransitionType.swift in Sources */,
 				5C0902F31EDC6EB80099F80E /* HistoryTableViewCell.swift in Sources */,
 				5C0902EE1EDC50D90099F80E /* Translation.swift in Sources */,
-				5C0902D91ED81E880099F80E /* WordView.swift in Sources */,
+				5C0902D91ED81E880099F80E /* VocabularyView.swift in Sources */,
 				67A6DF7CDB62E11A747E39DF /* HomeServices.swift in Sources */,
 				5CE687B71ED6BB4A00ABC9D9 /* UIColor+Extension.swift in Sources */,
 				5CE687D61ED7F8CB00ABC9D9 /* WordModel.swift in Sources */,
