@@ -101,10 +101,7 @@ class HomeViewController: BaseViewController {
             .bind(to: tabbleView.rx.items(dataSource: dataSource))
             .addDisposableTo(disposeBag)
         
-        wordView.playButton.rx.bind(to: viewModel.playAudioAction) { _  in
-            
-            return self.wordView.data?.finalUrl ?? ""
-        }
+        wordView.configureAction(collectAction: viewModel.collectAction, playAudioAction:viewModel.playAudioAction)
         
         wordView.rx.hidden.asDriver(onErrorJustReturn: false)
             .map{ return !$0 }

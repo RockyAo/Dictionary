@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Action
 
 class VocabularyView: UIView {
     
@@ -164,12 +165,29 @@ class VocabularyView: UIView {
             }
             .drive(collectionButton.rx.isSelected)
             .addDisposableTo(disposeBag)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    func configureAction(collectAction:Action<WordModel,WordModel>,playAudioAction:Action<String,Void>) -> Void {
+        
+        
+        collectionButton.rx.bind(to: collectAction){ _ in
+            
+            self.data?.selected = self.collectionButton.isSelected
+            
+            return self.data!
+        }
+        
+        playButton.rx.bind(to: playAudioAction){ _ in
+            
+            return self.data?.finalUrl ?? ""
+        }
+    }
 }
 
 extension Reactive where Base:VocabularyView{
