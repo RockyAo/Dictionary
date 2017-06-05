@@ -225,6 +225,8 @@ extension Reactive where Base:VocabularyView{
             style.lineSpacing = 20
             attrString.addAttributes([NSParagraphStyleAttributeName:style], range: NSRange(location: 0, length: desString.characters.count))
             wordView.descriptionLabel.attributedText = attrString
+            
+            wordView.collectionButton.isSelected = data.selected
         })
     }
     
