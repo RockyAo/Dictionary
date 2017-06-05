@@ -32,5 +32,7 @@ protocol DatabaseServiceType {
     func deleteAll() -> Observable<Void>
     
     func items() -> Observable<Results<WordDataModel>>
+    
+    func selectedItems() -> Observable<Array<WordDataModel>>
 
 }

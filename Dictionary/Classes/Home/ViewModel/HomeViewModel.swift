@@ -74,8 +74,6 @@ struct HomeViewModel {
             }
         
         playAudioAction = Action{ input in
-        
-            print(input)
             
             return service.playAudio(urlString: input)
         }

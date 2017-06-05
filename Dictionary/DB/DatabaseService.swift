@@ -79,5 +79,23 @@ class DatabaseService:DatabaseServiceType{
         }
         return result ?? .empty()
     }
+    
+    func selectedItems() -> Observable<Array<WordDataModel>> {
+        
+        let result =  withRealm("getting selected items") { (realm) -> Observable<Array<WordDataModel>> in
+            
+            let relam = try Realm()
+            
+            let items = relam.objects(WordDataModel.self)
+                        .toArray()
+                        .filter({ (dataModel) -> Bool in
+                            return dataModel.collection
+                        })
+            
+            return .just(items)
+        }
+        
+        return result ?? .empty()
+    }
 
 }
