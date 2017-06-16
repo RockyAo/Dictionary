@@ -12,12 +12,22 @@ class SettingViewController: BaseTableViewController {
 
     @IBOutlet weak var versionLabel: UILabel!
     
+    fileprivate let viewModel = SettingViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.hideBottomLine()
         
+        bindViewModel()
+    }
+    
+    fileprivate func bindViewModel(){
+    
+        viewModel.versionDriver
+            .drive(versionLabel.rx.text)
+            .addDisposableTo(disposeBag)
         
     }
 
@@ -31,6 +41,9 @@ class SettingViewController: BaseTableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        if indexPath.row == 0 {
         
+            viewModel.clearLocalDataAction()
+        }
     }
 }
