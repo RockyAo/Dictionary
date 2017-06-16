@@ -10,7 +10,7 @@ target 'Dictionary' do
    pod 'Alamofire'
    pod 'Moya'
    pod 'Moya/RxSwift'
-   pod 'ObjectMapper', '~> 2.2'
+   pod 'ObjectMapper'
 
    # UI
    pod 'SVProgressHUD'

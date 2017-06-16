@@ -22,6 +22,8 @@
 		5C0902F41EDC6EB80099F80E /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0902F21EDC6EB80099F80E /* HistoryTableViewCell.xib */; };
 		5C0902F61EDF055F0099F80E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902F51EDF055F0099F80E /* UITableView+Extension.swift */; };
 		5C0902F81EDF8CC90099F80E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0902F71EDF8CC90099F80E /* BaseService.swift */; };
+		5CB398061EF3DAEF00844753 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB398051EF3DAEF00844753 /* SettingViewController.storyboard */; };
+		5CB398081EF3DB4000844753 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB398071EF3DB4000844753 /* BaseTableViewController.swift */; };
 		5CE687451ED4298300ABC9D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687441ED4298300ABC9D9 /* AppDelegate.swift */; };
 		5CE6874F1ED4298300ABC9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE6874D1ED4298300ABC9D9 /* LaunchScreen.storyboard */; };
 		5CE6875A1ED4298300ABC9D9 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE687591ED4298300ABC9D9 /* DictionaryTests.swift */; };
@@ -97,6 +99,8 @@
 		5C0902F21EDC6EB80099F80E /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		5C0902F51EDF055F0099F80E /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		5C0902F71EDF8CC90099F80E /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		5CB398051EF3DAEF00844753 /* SettingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
+		5CB398071EF3DB4000844753 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		5CE687411ED4298300ABC9D9 /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE687441ED4298300ABC9D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CE6874E1ED4298300ABC9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -429,6 +433,7 @@
 			children = (
 				5CE6878C1ED42F3700ABC9D9 /* BaseViewController.swift */,
 				5CE687981ED4303600ABC9D9 /* CustomNavigationController.swift */,
+				5CB398071EF3DB4000844753 /* BaseTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				5CE687961ED42F8600ABC9D9 /* SettingViewController.swift */,
+				5CB398051EF3DAEF00844753 /* SettingViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 			files = (
 				5CE687851ED42CCC00ABC9D9 /* Assets.xcassets in Resources */,
 				5CE6874F1ED4298300ABC9D9 /* LaunchScreen.storyboard in Resources */,
+				5CB398061EF3DAEF00844753 /* SettingViewController.storyboard in Resources */,
 				5C0902F41EDC6EB80099F80E /* HistoryTableViewCell.xib in Resources */,
 				5CE687861ED42CCC00ABC9D9 /* Info.plist in Resources */,
 			);
@@ -783,6 +790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0902E61EDBC4AA0099F80E /* DatabaseServiceType.swift in Sources */,
+				5CB398081EF3DB4000844753 /* BaseTableViewController.swift in Sources */,
 				5CE687D41ED7DF2400ABC9D9 /* Date+Extension.swift in Sources */,
 				5C0902F61EDF055F0099F80E /* UITableView+Extension.swift in Sources */,
 				5C0902E11ED91CC70099F80E /* SVProgressHUD+Extension.swift in Sources */,

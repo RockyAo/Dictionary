@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SettingViewController: BaseViewController {
+class SettingViewController: BaseTableViewController {
 
+    @IBOutlet weak var versionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.hideBottomLine()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +27,10 @@ class SettingViewController: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
     }
-    */
-
 }

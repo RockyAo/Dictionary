@@ -64,7 +64,7 @@ extension MainTabbarController {
         
         addChildViewController(HomeViewController(), title: "词典", normalImage: #imageLiteral(resourceName: "tabbar_dictionary"), selectedImage: #imageLiteral(resourceName: "tabbar_dictionary_selected"))
         addChildViewController(BookViewController(), title:"单词本", normalImage: #imageLiteral(resourceName: "tabbar_notebook"), selectedImage: #imageLiteral(resourceName: "tabbar_dictionary_selected"))
-        addChildViewController(SettingViewController(), title: "设置", normalImage: #imageLiteral(resourceName: "tabbar_setting"), selectedImage: #imageLiteral(resourceName: "tabbar_setting_selected"))
+        addChildViewController(SettingViewController.createViewControllerFromStoryboard()!, title: "设置", normalImage: #imageLiteral(resourceName: "tabbar_setting"), selectedImage: #imageLiteral(resourceName: "tabbar_setting_selected"))
 
     }
     
