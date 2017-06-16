@@ -29,6 +29,17 @@ class SettingViewController: BaseTableViewController {
             .drive(versionLabel.rx.text)
             .addDisposableTo(disposeBag)
         
+        tableView.rx.itemSelected
+            .subscribe(onNext:{  indexPath in
+            
+                if indexPath.row == 0{
+                
+                     self.viewModel.clearLocalDataAction()
+                }
+                
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            .addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,13 +48,5 @@ class SettingViewController: BaseTableViewController {
     }
     
 
-   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        if indexPath.row == 0 {
-        
-            viewModel.clearLocalDataAction()
-        }
-    }
+  
 }
